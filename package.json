@@ -49,6 +49,7 @@
 	"dependencies": {
 		"@clerk/backend": "^0.38.1",
 		"@clerk/clerk-js": "^4.70.0",
+		"@internationalized/date": "^3.5.2",
 		"@vite-pwa/sveltekit": "^0.4.0",
 		"bits-ui": "^0.18.1",
 		"clerk-sveltekit": "^0.4.1",

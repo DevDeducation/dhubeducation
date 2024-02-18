@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { Constants, getDescription, getOgImage, utils } from '$lib';
-	import Button from '$lib/components/buttons/Button.svelte';
-	import { browser } from '$app/environment';
+	import { Constants, getDescription, getOgImage, utils } from '$lib'; 
 	import Courseform from '$lib/components/forms/Courseform.svelte';
 
 	
