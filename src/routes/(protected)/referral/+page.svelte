@@ -1,12 +1,9 @@
-<script lang="ts">
-	import Table from '$lib/components/widgets/Table.svelte';
-	import { page } from '$app/stores';
+<script lang="ts"> 
 	import Button from '$lib/components/buttons/Button.svelte';
 	import { alertstore, isloading, pagestore, utilsstore } from '$lib/stores/utilsstore';
 	import { Classes, type iFBResponse, type iReferee } from '$lib';
 	import { onMount } from 'svelte';
-	import type { PageServerData } from './$types';
-	import { invalidateAll } from '$app/navigation';
+	import type { PageServerData } from './$types'; 
 	import Refereecard from '$lib/components/cards/Refereecard.svelte';
 
 	$pagestore = "Referral"
