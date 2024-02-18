@@ -9,7 +9,7 @@
 </script>
 
 <Select.Root>
-  <Select.Trigger class={cn("dark:bg-transparent dark:border-muted-foreground", classes)}>
+  <Select.Trigger class={cn("dark:bg-transparent dark:border dark:border-muted", classes)}>
     <Select.Value placeholder={`Select a ${label}`} />
   </Select.Trigger>
   <Select.Content class="dark:bg-dark-900 dark:border-none">
