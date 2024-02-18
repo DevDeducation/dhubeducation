@@ -6,6 +6,7 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte'; 
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+	import { logout } from '$lib/firebase/client';
   // import { session } from '$app/stores'
 
   // export let session: iSession | undefined
@@ -53,37 +54,6 @@
 
 </script>
 
-<!-- <div class="flex flex-col justify-center items-center">
-  <div class="dropdown dropdown-end">
-    <button class="m-1" aria-label="avatar">
-      <div class={avatarClass}>
-        <span class:bg-green-500={isOnline} class:bg-red-500={!isOnline} class={statusClassName}></span>
-        {#if user?.picture}
-          <img src={user.picture} class="w-[40px] h-[40px] rounded-full" alt={user.name} loading="lazy"/>
-        {:else}
-          <Avataricon />
-        {/if}
-      </div>
-    </button>
-    <ul class="dropdown-content z-10 menu p-0 py-1 pb-0 shadow bg-white dark:bg-dark-800 rounded-lg w-60">
-      <li class="opacity-60 h-[40px]">
-        <span class="h-[40px] flex items-center w-full">Welcome {name}</span>  
-      </li> 
-      <hr class="dark:opacity-30"/>
-      {#if user}
-        <li><a href="/affiliate" class="h-[40px] flex items-center w-full">Affiliate</a></li>
-        <li><a href="/profile" class="h-[40px] flex items-center w-full">Profile</a></li>
-        <li><a href="/referral" class="h-[40px] flex items-center w-full">Referral</a></li>
-        <li><button aria-label="signout button" data-name="signout btn" class="h-[40px] flex items-center w-full" on:click={logout}>Signout</button></li>
-      {:else}
-        <li><a href="/register" class="h-[40px] flex items-center w-full">Register</a></li>
-        <li><a href="/login" class="h-[40px] flex items-center w-full">Signin</a></li>
-      {/if}
-    </ul>
-  </div>
-
-</div> -->
-
 <DropdownMenu.Root>
   <DropdownMenu.Trigger>
     <div class={avatarClass}>
@@ -95,14 +65,19 @@
       {/if}
     </div>
   </DropdownMenu.Trigger>
-  <DropdownMenu.Content>
+  <DropdownMenu.Content class="dark:bg-dark-900 border-none">
     <DropdownMenu.Group>
-      <DropdownMenu.Label><a href="/register" class="h-[40px] flex items-center w-full">Register</a></DropdownMenu.Label>
-      <DropdownMenu.Item><a href="/login" class="h-[40px] flex items-center w-full">Signin</a></DropdownMenu.Item>
+      <DropdownMenu.Label>Welcome {name}</DropdownMenu.Label>
       <DropdownMenu.Separator />
-      <!-- <DropdownMenu.Item>Billing</DropdownMenu.Item>
-      <DropdownMenu.Item>Team</DropdownMenu.Item>
-      <DropdownMenu.Item>Subscription</DropdownMenu.Item> -->
+      {#if user}
+        <DropdownMenu.Item><a href="/profile" class="h-[40px] flex items-center w-full">Profile</a></DropdownMenu.Item>
+        <DropdownMenu.Item><a href="/affiliate" class="h-[40px] flex items-center w-full">Affiliate</a></DropdownMenu.Item>
+        <DropdownMenu.Item><a href="/referral" class="h-[40px] flex items-center w-full">Referral</a></DropdownMenu.Item>
+        <DropdownMenu.Item><button aria-label="signout button" data-name="signout btn" class="h-[40px] flex items-center w-full" on:click={logout}>Signout</button></DropdownMenu.Item>
+      {:else}
+      <DropdownMenu.Item><a href="/register" class="h-[40px] flex items-center w-full">Register</a></DropdownMenu.Item>
+      <DropdownMenu.Item><a href="/login" class="h-[40px] flex items-center w-full">Signin</a></DropdownMenu.Item>
+      {/if}
     </DropdownMenu.Group>
   </DropdownMenu.Content>
 </DropdownMenu.Root>
