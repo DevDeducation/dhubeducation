@@ -7,6 +7,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import Selectlist from '$lib/components/widgets/Selectlist.svelte';
+	import Checkbox from '$lib/components/widgets/Checkbox.svelte';
 
 	const years = utils.num2List(5).map((idx) => new Date().getFullYear() + idx);
 
@@ -173,6 +174,7 @@
 							<span class="label-text text-font dark:text-white">SOP</span>
 						</label>
 					</div>
+					<!-- <Checkbox /> -->
 				</fieldset>
 				<Textarea
 					required

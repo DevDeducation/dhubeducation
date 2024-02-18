@@ -1,9 +1,11 @@
 <script lang="ts">
   import { Checkbox } from "$lib/components/ui/checkbox";
   import Label from "$lib/components/ui/label/label.svelte";
+  import { Input } from "../ui/input";
   let checked = false;
 
   export let label: string = ""
+  export let group: string[] = []
   export let name: string = ""
 </script>
 

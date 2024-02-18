@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/components/buttons/Button.svelte';
 	import { page } from '$app/stores';
-	import { Alerts, Classes, Constants, Events, Flags, type iEmailPassword, type iSession, type iUser } from '$lib';
+	import { Alerts, Classes, Constants, Events, Flags, educationlist, referrallist, type iEmailPassword, type iSession, type iUser } from '$lib';
 	import { onDestroy, onMount } from 'svelte';
 	import { enhance } from '$app/forms';
 	import '../../../styles/intlTelInput.min.css';
@@ -14,6 +13,9 @@
 	import { alertstore, utilsstore } from '$lib/stores/utilsstore';
 	import { browser } from '$app/environment';
 	import Payment from '$lib/components/fields/Payment.svelte';
+	import { Input } from '$lib/components/ui/input';
+	import { Button } from '$lib/components/ui/button';
+	import Selectlist from '$lib/components/widgets/Selectlist.svelte';
 
 	let loginUrl = '/login';
 
@@ -163,7 +165,7 @@
 				action="?/google"
 				bind:this={googleRegistrationForm}
 				on:submit={handleGoogleSubmit}
-				class="mx-auto md:pb-4 md:max-w-lg bg-white/90 dark:bg-dark-800/90 shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center"
+				class="mx-auto md:pb-4 md:max-w-lg shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center"
 				enctype="multipart/form-data"
 				use:enhance
 				method="post">
@@ -177,20 +179,20 @@
 					<input type="text" hidden name="countryCode" bind:value={countryCode} />
 					<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-						<input
+						<Input
 							type="text"
 							name="name"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="name"
 							hidden
 							bind:value={session.name}
 							required
 							placeholder="Full name"
 						/>
-						<input
+						<Input
 							type="text"
 							name="email"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="email"
 							bind:value={session.email}
 							hidden
@@ -198,57 +200,22 @@
 							placeholder="Email address"
 						/>
 						<input type="text" hidden name="authtype" value={Constants.GOOGLE} />
-						<input
+						<Input
 							type="text"
 							name="address"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="address"
 							required
 							placeholder="Home address"
 						/>
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white"
-							name="levelOfStudy"
-							required>
-							<option disabled selected>Level of Study</option>
-							<option class="dark:text-font" value="A-Level">A-Level</option>
-							<option class="dark:text-font" value="Foundation">Foundation</option>
-							<option class="dark:text-font" value="OND">OND</option>
-							<option class="dark:text-font" value="HND">HND</option>
-							<option class="dark:text-font" value="Top Up">Top Up</option>
-							<option class="dark:text-font" value="BSc.">BSc.</option>
-							<option class="dark:text-font" value="Pre-MSc.">Pre-MSc.</option>
-							<option class="dark:text-font" value="MSc.">MSc.</option>
-							<option class="dark:text-font" value="PhD.">PhD.</option>
-						</select>
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white"
-							name="typeOfReferral"
-							required>
-							<option disabled selected>Type of Referer</option>
-							<option class="dark:text-font" value="Customer">Customer</option>
-							<option class="dark:text-font" value="Employee">Employee</option>
-							<option class="dark:text-font" value="Influencer">Influencer</option>
-							<option class="dark:text-font" value="Teacher">Teacher</option>
-							<option class="dark:text-font" value="Vendor">Vendor</option>
-						</select>
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white"
-							name="countryOfInterest"
-							required>
-							<option disabled selected>Country of Interest</option>
-							<option class="dark:text-font" value="United States of America">USA (For UK students)</option>
-							<option class="dark:text-font" value="Malta">Malta</option>
-							<option class="dark:text-font" value="France (Paris)">France (Paris)</option>
-							<option class="dark:text-font" value="United Kingdom">United Kingdom</option>
-							<option class="dark:text-font" value="Netherland">Netherland</option>
-							<option class="dark:text-font" value="Canada">Canada</option>
-						</select>
+						<Selectlist name="levelOfStudy" label="Level of study" list={educationlist} />
+						<Selectlist name="typeOfReferral" label="Type of Referral" list={referrallist} />
+						<Selectlist name="countryOfInterest" label="Country of Interest" list={referrallist} />
 						<input
 							type="tel"
 							name="phoneNumber"
 							bind:this={phoneInput}
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="phoneNumber"
 							required
 							placeholder="Phone Number"
@@ -267,16 +234,7 @@
 						<Payment { method } { user } />
 					</div>
 				</div>
-				<Button
-					options={{
-						dataname: 'register btn',
-						isAnchorLink: false,
-						btnType: 'submit',
-						text: 'register',
-						width: 'w-full',
-						padding: 'py-3 px-6'
-					}}
-				/>
+				<Button type="submit" class="text-white">Register</Button>
 				<hr class="dark:opacity-30" />
 				<p class="font-semibold flex items-center justify-center gap-2">
 					<span>Already have an account?</span>
@@ -290,7 +248,7 @@
 				id="register"
 				action="?/emailandpassword"
 				on:submit|preventDefault={handleEmailAndPasswordSubmit}
-				class="mx-auto md:pb-4 md:max-w-lg bg-white/90 dark:bg-dark-800/90 shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center"
+				class="mx-auto md:pb-4 md:max-w-lg shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center"
 				enctype="multipart/form-data"
 				use:enhance
 				method="post">
@@ -305,82 +263,47 @@
 					<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
 
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-						<input
+						<Input
 							type="text"
 							name="name"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="name"
 							required
 							placeholder="Full name"
 						/>
-						<input
+						<Input
 							type="text"
 							name="email"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="email"
 							required
 							placeholder="Email address"
 						/>
-						<input
+						<Input
 							type="password"
 							name="password"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="password"
 							required
 							placeholder="Password"
 						/>
 						<input type="text" hidden name="authtype" value={Constants.EMAILANDPASSWORD} />
-						<input
+						<Input
 							type="text"
 							name="address"
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="address"
 							required
 							placeholder="Home address"
 						/>
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white"
-							name="levelOfStudy"
-							required>
-							<option disabled selected>Level of Study</option>
-							<option class="dark:text-font" value="A-Level">A-Level</option>
-							<option class="dark:text-font" value="Foundation">Foundation</option>
-							<option class="dark:text-font" value="OND">OND</option>
-							<option class="dark:text-font" value="HND">HND</option>
-							<option class="dark:text-font" value="Top Up">Top Up</option>
-							<option class="dark:text-font" value="BSc.">BSc.</option>
-							<option class="dark:text-font" value="Pre-MSc.">Pre-MSc.</option>
-							<option class="dark:text-font" value="MSc.">MSc.</option>
-							<option class="dark:text-font" value="PhD.">PhD.</option>
-						</select>
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white"
-							name="typeOfReferral"
-							required>
-							<option disabled selected>Type of Referral</option>
-							<option class="dark:text-font" value="Customer">Customer</option>
-							<option class="dark:text-font" value="Employee">Employee</option>
-							<option class="dark:text-font" value="Influencer">Influencer</option>
-							<option class="dark:text-font" value="Teacher">Teacher</option>
-							<option class="dark:text-font" value="Vendor">Vendor</option>
-						</select>
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white"
-							name="countryOfInterest"
-							required>
-							<option disabled selected>Country of Interest</option>
-							<option class="dark:text-font" value="United States of America">USA (For UK students)</option>
-							<option class="dark:text-font" value="Malta">Malta</option>
-							<option class="dark:text-font" value="France (Paris)">France (Paris)</option>
-							<option class="dark:text-font" value="United Kingdom">United Kingdom</option>
-							<option class="dark:text-font" value="Netherland">Netherland</option>
-							<option class="dark:text-font" value="Canada">Canada</option>
-						</select>
+						<Selectlist name="levelOfStudy" label="Level of study" list={educationlist} />
+						<Selectlist name="typeOfReferral" label="Type of Referral" list={referrallist} />
+						<Selectlist name="countryOfInterest" label="Country of Interest" list={referrallist} />
 						<input
 							type="tel"
 							name="phoneNumber"
 							bind:this={phoneInput}
-							class="input input-bordered w-full bg-transparent dark:text-white"
+							class="!border !border-muted dark:bg-transparent"
 							id="phoneNumber"
 							required
 							placeholder="Phone Number"
@@ -400,16 +323,7 @@
 					</div>
 
 				</div>
-				<Button
-					options={{
-						dataname: 'register btn',
-						isAnchorLink: false,
-						btnType: 'submit',
-						text: 'register',
-						width: 'w-full',
-						padding: 'py-3 px-6'
-					}}
-				/>
+				<Button type="submit" class="text-white">Register</Button>
 				<hr class="dark:opacity-30" />
 				<p class="font-semibold flex items-center justify-center gap-2">
 					<span>Already have an account?</span>

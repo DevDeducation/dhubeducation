@@ -511,6 +511,14 @@ export const educationlist = [
 ];
 
 
+export const referrallist = [
+  { value: 'customer', label: 'Customer' },
+  { value: 'employee', label: 'Employee' },
+  { value: 'teacher', label: 'Teacher' },
+  { value: 'vendor', label: 'Vendor' },
+  { value: 'influencer', label: 'Influencer' },
+];
+
 export const countrylist = [
   { value: 'malta', label: 'Malta' },
   { value: 'france (paris)', label: 'France (Paris)' },

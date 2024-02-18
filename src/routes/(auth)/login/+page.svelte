@@ -1,11 +1,12 @@
 <script lang="ts">
-	import Button from "$lib/components/buttons/Button.svelte";
 	import { getRedirect, handleSignInWithEmailAndPassword, navigateToDestination, signInWithGoogle } from "$lib/firebase/client";
 	import { enhance } from "$app/forms";
 	import Google from "$lib/components/icons/Google.svelte";
 	import { Alerts, Classes, type iEmailPassword } from "$lib";
 	import { alertstore, utilsstore } from "$lib/stores/utilsstore";
 	import { browser } from "$app/environment";
+	import { Input } from "$lib/components/ui/input";
+	import { Button } from "$lib/components/ui/button";
 
 	let registerUrl = "/register"
 
@@ -45,12 +46,12 @@
 
 <div>
 	<section class="py-4 acenter">
-		<div class="mx-auto md:pb-4 md:max-w-md bg-white/90 dark:bg-dark-800/90 shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center">
+		<div class="mx-auto md:pb-4 md:max-w-md shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center">
 
-			<button on:click={signInWithGoogle} class="rounded-lg flex items-center justify-center gap-2 px-6 py-3 self-center w-full border-2 border-primary dark:border-white">
+			<Button variant="outline" class="dark:border-muted flex items-center gap-2" on:click={signInWithGoogle}>
 				<Google />
-				<span class="tracking-wide font-bold text-primary dark:text-white uppercase">Login with Google</span>
-			</button>
+				Google
+			</Button>
 			<form
 				id="login"
 				action="?/login"
@@ -65,35 +66,25 @@
 					</p>
 				</div>
 				<div class="grid grid-cols-1 gap-4">
-					<input
+					<Input
 						type="text"
 						name="email"
-						class="input input-bordered w-full bg-transparent dark:text-white"
+						class="!border !border-muted dark:bg-transparent"
 						id="email"
 						required
 						placeholder="Email address"
 					/>
-					<input
+					<Input
 						type="password"
 						name="password"
-						class="input input-bordered w-full bg-transparent dark:text-white"
+						class="!border !border-muted dark:bg-transparent"
 						id="password"
 						required
 						placeholder="Password"
 					/>
 	
 				</div>
-	
-				<Button
-					options={{
-						dataname: 'login',
-						isAnchorLink: false,
-						btnType: 'submit',
-						text: 'login',
-						padding: 'py-3 px-6',
-						width: 'w-full'
-					}}
-				/>
+				<Button type="submit" class="text-white">Submit</Button>
 				<hr class="dark:opacity-30"/>
 				<p class="font-semibold flex items-center justify-center gap-2">
 					<span>Don't have an account?</span>
