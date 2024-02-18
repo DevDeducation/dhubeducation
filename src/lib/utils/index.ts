@@ -509,3 +509,12 @@ export const educationlist = [
   { value: 'msc', label: 'MSc' },
   { value: 'phd', label: 'PhD' }
 ];
+
+
+export const countrylist = [
+  { value: 'malta', label: 'Malta' },
+  { value: 'france (paris)', label: 'France (Paris)' },
+  { value: 'united kingdom', label: 'United Kingdom' },
+  { value: 'netherland', label: 'Netherland' },
+  { value: 'canada', label: 'Canada' },
+];

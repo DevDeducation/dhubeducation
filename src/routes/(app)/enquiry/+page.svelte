@@ -48,7 +48,7 @@
 		<form
 			id="enquiry"
 			action="?/enquiry"
-			class="mx-auto md:pb-4 md:max-w-2xl bg-white/90 dark:bg-dark-800/90 shadow-custom rounded-lg overflow-hidden flex flex-col items-center"
+			class="mx-auto md:pb-4 md:max-w-2xl shadow-custom rounded-lg overflow-hidden flex flex-col items-center"
 			enctype="multipart/form-data"
 			method="post" use:enhance>
 			<div aria-label="form-fields" class="flex flex-col p-4 gap-4 w-full text-center">
@@ -60,7 +60,7 @@
 					<Input
 						type="text"
 						name="name"
-						class="w-full bg-transparent dark:text-white dark:border-muted-foreground"
+						class="!border !border-muted dark:bg-transparent"
 						id="name"
 						required
 						placeholder="Name"
@@ -69,7 +69,7 @@
 					<Input
 						type="text"
 						name="surname"
-						class="w-full bg-transparent dark:text-white dark:border-muted-foreground"
+						class="!border !border-muted dark:bg-transparent"
 						id="surname"
 						required
 						placeholder="Surname"
@@ -78,7 +78,7 @@
 					<Input
 						type="number"
 						name="phoneNumber"
-						class=" w-full bg-transparent dark:text-white dark:border-muted-foreground"
+						class="!border !border-muted dark:bg-transparent"
 						id="phoneNumber"
 						required
 						placeholder="Phone Number"
@@ -87,26 +87,13 @@
 					<Input
 						type="text"
 						name="email"
-						class="w-full bg-transparent dark:text-white dark:border-muted-foreground"
+						class="!border !border-muted dark:bg-transparent"
 						id="email"
 						required
 						placeholder="Email address"
 					/>
 
-					<select
-						class="select select-bordered w-full bg-transparent dark:text-white"
-						name="countryOfInterest"
-						required>
-						<option disabled selected>Country of Interest</option>
-						<option class="dark:text-font" value="United States of America"
-							>USA (For UK students)</option>
-						<option class="dark:text-font" value="Malta">Malta</option>
-						<option class="dark:text-font" value="France (Paris)">France (Paris)</option>
-						<option class="dark:text-font" value="United Kingdom">United Kingdom</option>
-						<option class="dark:text-font" value="Netherland">Netherland</option>
-						<option class="dark:text-font" value="Canada">Canada</option>
-					</select>
-
+					<Selectlist list={educationlist} name="countryOfInterest" label="Country of Interest" />
 					<Selectlist list={educationlist} name="levelOfStudy" label="Level of Study" />
 					<Selectlist list={yearlist} name="yearOfEntry" label="Year of Entry" />
 				</div>
@@ -190,7 +177,7 @@
 				<Textarea
 					required
 					name="note" 
-					class="resize-none w-full bg-transparent dark:text-white dark:border-muted-foreground" 
+					class="resize-none !border !border-muted dark:bg-transparent" 
 					placeholder="Please enter your enquiry here..."
 				/>
 			</div>
