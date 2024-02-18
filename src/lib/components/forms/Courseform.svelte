@@ -6,22 +6,11 @@
 	import Selectlist from '../widgets/Selectlist.svelte';
 	import { Button } from '../ui/button';
 	import toast, { Toaster } from 'svelte-french-toast';
+	import { educationlist } from '$lib';
 
 	const genderlist = [
 		{ value: 'male', label: 'Male' },
 		{ value: 'female', label: 'Female' }
-	];
-
-	const educationlist = [
-		{ value: 'a-level', label: 'A-Level' },
-		{ value: 'foundation', label: 'Foundation' },
-		{ value: 'hnd', label: 'HND' },
-		{ value: 'ond', label: 'OND' },
-		{ value: 'top up', label: 'Top Up' },
-		{ value: 'bsc', label: 'BSc' },
-		{ value: 'pre-msc', label: 'Pre-MSc' },
-		{ value: 'msc', label: 'MSc' },
-		{ value: 'phd', label: 'PhD' }
 	];
 
 	const preferredday = [
@@ -87,8 +76,8 @@
 					required
 					class="!border !border-muted dark:bg-transparent"
 				/>
-				<Datepicker name="dateofbirth" />
-				<Selectlist name="gender" list={genderlist} />
+				<Datepicker label="Date of birth" name="dateofbirth" />
+				<Selectlist name="gender" label="Gender" list={genderlist} />
 				<Input
 					name="country"
 					placeholder="Country"
@@ -134,8 +123,8 @@
 		<fieldset>
 			<legend>Course Preferences</legend>
 			<div class="flex flex-col gap-2">
-				<Selectlist name="day" list={preferredday} />
-				<Selectlist name="format" list={courseformat} />
+				<Selectlist name="day" label="Preferred Day" list={preferredday} />
+				<Selectlist name="format" label="Course Format" list={courseformat} />
 			</div>
 		</fieldset>
 		<Button type="submit" class="w-full">Submit</Button>

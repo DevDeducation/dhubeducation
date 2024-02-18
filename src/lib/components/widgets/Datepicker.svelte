@@ -8,12 +8,15 @@
   import { DateInput } from 'date-picker-svelte'
 
   export let name: string = ""
+  export let label: string = ""
 
   let date: Date = new Date()
 
   $: value = format(date, "MMM. d, yyyy")
 </script>
 
+<div class="flex flex-col gap-2">
+  <p>{label}</p>
 <Popover.Root>
   <Popover.Trigger asChild let:builder>
     <Button
@@ -32,3 +35,4 @@
   </Popover.Content>
   <Input { name } type="hidden" bind:value />
 </Popover.Root>
+</div>

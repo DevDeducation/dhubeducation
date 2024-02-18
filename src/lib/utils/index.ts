@@ -371,7 +371,6 @@ export class Utils {
   }
 }
 
-
 export const utils = new Utils()
 
 export const links = {
@@ -498,3 +497,15 @@ export const getMetadata = (paths: Record<string, any>) => {
 export const getDescription = (str: string) => `${str} (study abroad, international education, study abroad programs, study overseas, study abroad scholarships, study abroad destinations, study abroad opportunities, study abroad experiences, study abroad benefits, best countries to study abroad, study abroad universities, study abroad consultants, study abroad costs, study abroad tips, study abroad application process, study abroad grants, study abroad internships, study abroad reviews, study abroad experiences blog) #studyabroadlife #studentlife #education #studymotivation #educationconsultant #educationagency #viral #trend #reels #reelsinstagram #canadian #studyincanada #studentaccommodation #studenthousing #canada 🇨🇦 #canada #nigerians #nigeriansincanada #immigration #london #unitedkingdom #immigrationcanada #pr`
 
 export const getOgImage = (partialImage: string) => `${Constants.DOMAIN}${partialImage}`
+
+export const educationlist = [
+  { value: 'a-level', label: 'A-Level' },
+  { value: 'foundation', label: 'Foundation' },
+  { value: 'hnd', label: 'HND' },
+  { value: 'ond', label: 'OND' },
+  { value: 'top up', label: 'Top Up' },
+  { value: 'bsc', label: 'BSc' },
+  { value: 'pre-msc', label: 'Pre-MSc' },
+  { value: 'msc', label: 'MSc' },
+  { value: 'phd', label: 'PhD' }
+];

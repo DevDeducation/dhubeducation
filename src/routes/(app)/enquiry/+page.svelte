@@ -1,11 +1,16 @@
 <script lang="ts">
-	import { Constants, getDescription, getOgImage, utils } from '$lib';
-	import Button from '$lib/components/buttons/Button.svelte';
+	import { Constants, educationlist, getDescription, getOgImage, utils } from '$lib';
 	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
 	import { browser } from '$app/environment';
+	import { Input } from '$lib/components/ui/input';
+	import { Button } from '$lib/components/ui/button';
+	import { Textarea } from '$lib/components/ui/textarea';
+	import Selectlist from '$lib/components/widgets/Selectlist.svelte';
 
 	const years = utils.num2List(5).map((idx) => new Date().getFullYear() + idx);
+
+	let yearlist = years.map(year => ({ label: year.toString(), value: year.toString() }))
 
   let documents: string[] = []
 
@@ -38,7 +43,7 @@
   <meta property="twitter:image" content="{ogimage}" />
 </svelte:head>
 
-<div class="form">
+<div>
 	<section class="py-4 acenter">
 		<form
 			id="enquiry"
@@ -52,37 +57,37 @@
 					<p>Submit your questions and we will respond to it as soon as possible</p>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-					<input
+					<Input
 						type="text"
 						name="name"
-						class="input input-bordered w-full bg-transparent dark:text-white"
+						class="w-full bg-transparent dark:text-white dark:border-muted-foreground"
 						id="name"
 						required
 						placeholder="Name"
 					/>
 
-					<input
+					<Input
 						type="text"
 						name="surname"
-						class="input input-bordered w-full bg-transparent dark:text-white"
+						class="w-full bg-transparent dark:text-white dark:border-muted-foreground"
 						id="surname"
 						required
 						placeholder="Surname"
 					/>
 
-					<input
+					<Input
 						type="number"
 						name="phoneNumber"
-						class="input input-bordered w-full bg-transparent dark:text-white"
+						class=" w-full bg-transparent dark:text-white dark:border-muted-foreground"
 						id="phoneNumber"
 						required
 						placeholder="Phone Number"
 					/>
 
-					<input
+					<Input
 						type="text"
 						name="email"
-						class="input input-bordered w-full bg-transparent dark:text-white"
+						class="w-full bg-transparent dark:text-white dark:border-muted-foreground"
 						id="email"
 						required
 						placeholder="Email address"
@@ -91,8 +96,7 @@
 					<select
 						class="select select-bordered w-full bg-transparent dark:text-white"
 						name="countryOfInterest"
-						required
-					>
+						required>
 						<option disabled selected>Country of Interest</option>
 						<option class="dark:text-font" value="United States of America"
 							>USA (For UK students)</option>
@@ -103,30 +107,8 @@
 						<option class="dark:text-font" value="Canada">Canada</option>
 					</select>
 
-					<select
-						class="select select-bordered w-full bg-transparent dark:text-white"
-						name="levelOfStudy"
-						required>
-						<option disabled selected>Level of Study</option>
-						<option class="dark:text-font" value="A-Level">A-Level</option>
-						<option class="dark:text-font" value="Foundation">Foundation</option>
-						<option class="dark:text-font" value="OND">OND</option>
-						<option class="dark:text-font" value="HND">HND</option>
-						<option class="dark:text-font" value="Top Up">Top Up</option>
-						<option class="dark:text-font" value="BSc.">BSc.</option>
-						<option class="dark:text-font" value="Pre-MSc.">Pre-MSc.</option>
-						<option class="dark:text-font" value="MSc.">MSc.</option>
-						<option class="dark:text-font" value="PhD.">PhD.</option>
-					</select>
-					<select
-						class="select select-bordered w-full bg-transparent dark:text-white"
-						name="yearOfEntry"
-						required>
-						<option disabled selected>Year of Entry</option>
-						{#each years as year, i}
-							<option class="dark:text-font" value={year}>{year}</option>
-						{/each}
-					</select>
+					<Selectlist list={educationlist} name="levelOfStudy" label="Level of Study" />
+					<Selectlist list={yearlist} name="yearOfEntry" label="Year of Entry" />
 				</div>
 
 				<fieldset class="grid grid-cols-1 md:grid-cols-2 w-full">
@@ -205,30 +187,16 @@
 						</label>
 					</div>
 				</fieldset>
-				<textarea
+				<Textarea
 					required
-					name="note"
-					id="note"
-					class="textarea textarea-bordered w-full bg-transparent dark:text-white"
-					rows="4"
+					name="note" 
+					class="resize-none w-full bg-transparent dark:text-white dark:border-muted-foreground" 
 					placeholder="Please enter your enquiry here..."
 				/>
 			</div>
-			<Button
-				options={{
-					dataname: 'enquiry btn',
-					isAnchorLink: false,
-					btnType: 'submit',
-					text: 'submit',
-					padding: 'py-3 px-6'
-				}}
-			/>
+			<Button type="submit" class="dark:text-white">
+				Submit
+			</Button>
 		</form>
 	</section>
-</div>
-
-<style>
-	#note {
-		resize: none;
-	}
-</style>
+</div> 
