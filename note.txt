@@ -1,0 +1,1 @@
+- cookie consent: pnpm add vanilla-cookieconsent@v3.0.0

@@ -1,12 +1,11 @@
-<script lang="ts">
-	import { logout } from '$lib/firebase/client';
+<script lang="ts"> 
   import { utilsstore } from '$lib/stores/utilsstore';
 	import Avataricon from '../icons/Avataricon.svelte';
 	import type { iSession } from '$lib';
   import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
-	import OnlineStatus from '../widgets/OnlineStatus.svelte';
+	import { onMount } from 'svelte'; 
+  import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   // import { session } from '$app/stores'
 
   // export let session: iSession | undefined
@@ -15,9 +14,9 @@
   let user: iSession | undefined = $page.data.userSession
   let registered: Record<string, any> = $page.data.registered
 
-	const remove = ['p-2', 'rounded-lg'];
+	const remove = ['p-2', 'rounded-lg', 'sm:w-8', 'sm:h-8',];
 
-	const add = ['w-[40px]', 'h-[40px]', 'sm:w-8', 'sm:h-8', 'rounded-full', 'text-primary'];
+	const add = ['w-[40px]', 'h-[40px]', 'rounded-full', 'text-primary'];
 
   const avatarClass = `avatar relative ${$utilsstore.getBtnClasses(remove, add).join(" ")}`
 
@@ -54,7 +53,7 @@
 
 </script>
 
-<div class="flex flex-col justify-center items-center">
+<!-- <div class="flex flex-col justify-center items-center">
   <div class="dropdown dropdown-end">
     <button class="m-1" aria-label="avatar">
       <div class={avatarClass}>
@@ -83,4 +82,27 @@
     </ul>
   </div>
 
-</div>
+</div> -->
+
+<DropdownMenu.Root>
+  <DropdownMenu.Trigger>
+    <div class={avatarClass}>
+      <span class:bg-green-500={isOnline} class:bg-red-500={!isOnline} class={statusClassName}></span>
+      {#if user?.picture}
+        <img src={user.picture} class="w-[40px] h-[40px] rounded-full" alt={user.name} loading="lazy"/>
+      {:else}
+        <Avataricon />
+      {/if}
+    </div>
+  </DropdownMenu.Trigger>
+  <DropdownMenu.Content>
+    <DropdownMenu.Group>
+      <DropdownMenu.Label><a href="/register" class="h-[40px] flex items-center w-full">Register</a></DropdownMenu.Label>
+      <DropdownMenu.Item><a href="/login" class="h-[40px] flex items-center w-full">Signin</a></DropdownMenu.Item>
+      <DropdownMenu.Separator />
+      <!-- <DropdownMenu.Item>Billing</DropdownMenu.Item>
+      <DropdownMenu.Item>Team</DropdownMenu.Item>
+      <DropdownMenu.Item>Subscription</DropdownMenu.Item> -->
+    </DropdownMenu.Group>
+  </DropdownMenu.Content>
+</DropdownMenu.Root>

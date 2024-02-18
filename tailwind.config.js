@@ -45,7 +45,7 @@ const config = {
           "800": "#42143a",
           "900": "#210a1d"
 				},
-				'secondary': {
+				secondary: {
 					DEFAULT: '#ff0084',
 					"50": "#ffe6f3",
           "100": "#ffcce7",

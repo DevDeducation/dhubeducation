@@ -1,6 +1,9 @@
-import { type CookieConsentConfig, getUserPreferences, run, showPreferences } from 'vanilla-cookieconsent';
+import * as cookieConsent from 'vanilla-cookieconsent';
 
-const config: CookieConsentConfig = {
+// Then you can access the functions like:
+const { run, showPreferences } = cookieConsent;
+
+const config: cookieConsent.CookieConsentConfig = {
 	categories: {
 		necessary: {
 			enabled: true,

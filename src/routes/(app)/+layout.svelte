@@ -6,9 +6,9 @@
 	import MobileNavigation from '$lib/components/sections/MobileNavigation.svelte';
 	import Alert from '$lib/components/partials/Alert.svelte';
 	import SocialMediaBtns from '$lib/components/sections/SocialMediaBtns.svelte';
-	import ClickToChatFab from '$lib/components/buttons/ClickToChatFab.svelte';
 	import { handleClick, popup } from '$lib';
-	import CookieConsentBtn from '$lib/components/buttons/CookieConsentBtn.svelte'; 
+	import { ModeWatcher } from "mode-watcher";
+
 
 	let popupBtnRef: HTMLButtonElement
 	
@@ -16,6 +16,7 @@
 </script>
 
 <div class="bg-body dark:bg-dark-950 text-font dark:text-dark-100 overflow-hidden"> 
+	<ModeWatcher />
 	<SocialMediaBtns />
 	<Header />
 	<Alert />
@@ -24,8 +25,7 @@
 	</main> 
 	<Footer /> 
 	<Modal />
-	<MobileNavigation />
-	<!-- <CookieConsentBtn /> -->
+	<MobileNavigation /> 
 	<button 
 		aria-label="popup button"
 		bind:this={popupBtnRef}

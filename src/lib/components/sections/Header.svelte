@@ -3,7 +3,7 @@
 	import Avatar from '../buttons/Avatar.svelte';
 	import { pagestore } from '$lib/stores/utilsstore';
 
-	import Button from '../buttons/Button.svelte';
+	import { Button } from '../ui/button';
 	import Darkmode from '../buttons/Darkmode.svelte';
 	import Logo from '../icons/Logo.svelte';
 
@@ -66,18 +66,15 @@
 						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
 						href="/partners">Partners</a
 					>
+					<a
+						aria-label="course"
+						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
+						href="/course">Course</a
+					>
 				{/if}
-				<!-- <a aria-label="enquiry" class="w-full h-full bt bt-secondary md:h-[32px] flex justify-center items-center text-sm" href="/enquiry">Enquiry</a> -->
-				<Button
-					options={{
-						isAnchorLink: true,
-						text: 'Enquiry',
-						href: '/enquiry',
-						height: 'h-[32px]',
-						padding: 'px-4',
-						otherclasses: 'flex justify-center items-center'
-					}}
-				/>
+				<Button class="text-white">
+					<a href="/enquiry">ENQUIRY</a>	
+				</Button>
 			</nav>
 			<div>
 				<div class="flex items-center gap-2">

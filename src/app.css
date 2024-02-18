@@ -40,7 +40,7 @@
     --background: 242 14% 47%;
     --foreground: 210 40% 98%;
  
-    --muted: 329 100% 50%;
+    --muted: 240 14.53% 22.94%;
     --muted-foreground: 215 20.2% 65.1%;
  
     --popover: 242 14% 47%;
@@ -49,16 +49,16 @@
     --card: 242 14% 47%;
     --card-foreground: 210 40% 98%;
  
-    --border: 329 100% 50%;
-    --input: 329 100% 50%;
+    --border: 240 14.53% 22.94%;
+    --input: 240 14.53% 22.94%;
  
     --primary: 210 40% 98%;
     --primary-foreground: 311 53% 43%;
  
-    --secondary: 329 100% 50%;
+    --secondary: 240 14.53% 22.94%;
     --secondary-foreground: 210 40% 98%;
  
-    --accent: 329 100% 50%;
+    --accent: 240 14.53% 22.94%;
     --accent-foreground: 210 40% 98%;
  
     --destructive: 0 62.8% 30.6%;
