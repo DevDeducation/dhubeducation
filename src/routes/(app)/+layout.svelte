@@ -15,7 +15,7 @@
 	$: popupBtnRef && popupBtnRef.click()
 </script>
 
-<div class="bg-body dark:bg-dark-950 text-font dark:text-dark-100"> 
+<div class="bg-body dark:bg-dark-950 text-font dark:text-dark-100 overflow-hidden"> 
 	<SocialMediaBtns />
 	<Header />
 	<Alert />

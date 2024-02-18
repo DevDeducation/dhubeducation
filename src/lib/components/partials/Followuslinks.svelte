@@ -29,8 +29,8 @@
 
 <div class="flex justify-between md:justify-start gap-2 items-center">
   {#each links.followus.submenu as menu, i}
-    <Button>
-      <a href={menu.url} target="_blank" class="w-10 h-10 flex items-center justify-center dark:bg-white rounded-lg" aria-label={menu.name}>
+    <Button class="!p-0 !m-0">
+      <a href={menu.url} target="_blank" class="w-10 h-10 flex items-center justify-center dark:bg-white text-white dark:text-primary rounded-lg" aria-label={menu.name}>
         <svelte:component this={icon(menu.name)}></svelte:component>
       </a>
     </Button>

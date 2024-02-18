@@ -1,12 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="DHUB, Education, International, USA, UK, Canada" />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="English" />
+  <meta name="author" content="Dhub Education" />
+
+  <title>DHUB Education</title>
+  <meta name="description" content="Empowering International Education Journeys" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dhubeducation.com" />
+  <meta property="og:title" content="DHUB Education" />
+  <meta property="og:description" content="Empowering International Education Journeys!" />
+  <meta property="og:image" content="https://www.dhubeducation.com/images/og-image_1920x1080.webp" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://dhubeducation.com/" />
+  <meta name="google-site-verification" content="k4wu1T7B7j_TicJDOGzrHtypLiGI-4rraqQN5Tr6-AY" />
+  <meta property="twitter:title" content="DHUB Education" />
+  <meta property="twitter:description" content="Empowering International Education Journeys" />
+  <meta property="twitter:image" content="https://www.dhubeducation.com/images/og-image_1920x1080.webp" />
+
+	<script>
+    // Global scripts
+    (function () {
+      const Util = {
+        DARK: "dark",
+        LIGHT: "light",
+        THEME: "theme",
+      };
+
+
+      // set theme
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem(Util.THEME)
+        ) {
+          return localStorage.getItem(Util.THEME);
+        }
+
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return Util.DARK;
+        }
+        return Util.LIGHT;
+      })();
+
+      if (theme === Util.LIGHT) {
+        document.documentElement.classList.remove(Util.DARK);
+      } else {
+        document.documentElement.classList.add(Util.DARK);
+      }
+      window.localStorage.setItem(Util.THEME, theme)
+    })();
+  </script>
+  <link rel="alternate" href="https://dhubeducation.com/" hreflang="en-ng" />
+  <link rel="alternate" href="https://dhubeducation.com/" hreflang="fr-ci" />
+  <link rel="manifest" href="%sveltekit.assets%/manifest.json">
+  %sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover"  data-sveltekit-reload class="tracking-[.4px]">
+  <div style="display: contents">%sveltekit.body%</div>
+</body>
+
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-CZG7KEVS1W"></script>
+<script defer src="//code.tidio.co/5g21tnzxolaiux79zh7erzcrxbcpbsfu.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date()); 
+
+  gtag('config', 'G-CZG7KEVS1W');
+</script>
 </html>
