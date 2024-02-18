@@ -5,6 +5,7 @@
 	import LogoWhite from '../icons/LogoWhite.svelte';
 	import WhatsApp from '../icons/WhatsApp.svelte';
 	import Followuslinks from '../partials/Followuslinks.svelte';
+	import { Button } from '../ui/button';
 
 	$: year = new Date().getFullYear();
 </script>
@@ -60,7 +61,9 @@
 				<div class="text-font dark:text-white">
 					<Followuslinks />
 				</div>
-				<a href="/enquiry" class="py-3 px-6 rounded-lg uppercase flex justify-center items-center bg-white text-primary font-semibold">Enquiry</a>
+				<Button variant="outline" class="bg-transparent w-full">
+					<a href="/enquiry" class="flex justify-center items-center text-white font-semibold">Enquiry</a>
+				</Button>
 			</nav>
 		</div>
 		<hr class="opacity-40 border-white/40" />
