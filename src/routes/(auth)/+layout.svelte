@@ -14,7 +14,7 @@
 	<Alert />
 	<slot />
 	<MobileNavigation />
-	<ClickToChatFab />
-	<CookieConsentBtn />
+	<!-- <ClickToChatFab /> -->
+	<!-- <CookieConsentBtn /> -->
 	<Footer />
 </div>
