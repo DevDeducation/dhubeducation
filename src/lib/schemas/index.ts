@@ -11,7 +11,7 @@ export const courseFormSchema = z.object({
   employer: z.string().min(2),
   jobtitle: z.string().min(2),
   experience: z.string().min(2),
-  dayofweek: z.string().min(2),
+  preferredday: z.string().min(2),
   courseformat: z.string().min(2),
   paymentmethod: z.string().min(2)
 });

@@ -8,6 +8,7 @@
 	import SocialMediaBtns from '$lib/components/sections/SocialMediaBtns.svelte';
 	import { handleClick, popup } from '$lib';
 	import { ModeWatcher } from "mode-watcher";
+	import { Toaster } from 'svelte-french-toast';
 
 
 	let popupBtnRef: HTMLButtonElement
@@ -16,6 +17,7 @@
 </script>
 
 <div class="bg-body dark:bg-dark-950 text-font dark:text-dark-100 overflow-hidden"> 
+	<Toaster />
 	<ModeWatcher />
 	<SocialMediaBtns />
 	<Header />

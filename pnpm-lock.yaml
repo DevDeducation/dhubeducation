@@ -32,6 +32,9 @@ dependencies:
   date-fns:
     specifier: ^3.3.1
     version: 3.3.1
+  date-picker-svelte:
+    specifier: ^2.10.1
+    version: 2.10.1(svelte@4.2.11)
   firebase:
     specifier: ^10.8.0
     version: 10.8.0
@@ -10281,6 +10284,14 @@ packages:
     resolution: {integrity: sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==}
     engines: {node: '>=4.0'}
     dev: true
+
+  /date-picker-svelte@2.10.1(svelte@4.2.11):
+    resolution: {integrity: sha512-z4cJ33hngSCPlxc1ERVOgRBJHQXwghJMNtQBT0Q2d3Z9IHGmoIYpViS5s9oRbivs4+TDHkIBmqd/8Ldu9xEYhw==}
+    peerDependencies:
+      svelte: ^3.24.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.11
+    dev: false
 
   /dayjs@1.11.10:
     resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
