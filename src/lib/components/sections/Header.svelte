@@ -29,12 +29,12 @@
 
 		{#if showTitle}
 			<!-- <Searchbar /> -->
-			<h1 class="uppercase hidden md:block">{$pagestore}</h1>
+			<h1 class="capitalise hidden md:block">{$pagestore}</h1>
 		{/if}
 
 		<!-- <NewLogo /> -->
 		<div class="right flex gap-4 items-center">
-			<nav class="hidden md:flex items-center gap-6 justify-center uppercase text-sm">
+			<nav class="hidden md:flex items-center gap-6 justify-center capitalise text-sm dark:text-white">
 				{#if openRoute}
 					<a
 						aria-label="home"
@@ -73,7 +73,7 @@
 					>
 				{/if}
 				<Button class="text-white">
-					<a href="/enquiry">ENQUIRY</a>	
+					<a href="/enquiry">Enquiry</a>	
 				</Button>
 			</nav>
 			<div>

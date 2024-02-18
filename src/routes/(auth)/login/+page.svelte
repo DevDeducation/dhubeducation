@@ -48,7 +48,7 @@
 	<section class="py-4 acenter">
 		<div class="mx-auto md:pb-4 md:max-w-md shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center">
 
-			<Button variant="outline" class="dark:border-muted flex items-center gap-2" on:click={signInWithGoogle}>
+			<Button variant="outline" class="dark:border-muted flex items-center gap-2 dark:bg-transparent" on:click={signInWithGoogle}>
 				<Google />
 				Google
 			</Button>
