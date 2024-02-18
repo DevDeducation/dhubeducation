@@ -102,7 +102,7 @@
 </section>
 
 <!-- slides section -->
-<section aria-label="intro" class="row" id="slider">
+<section aria-label="intro" class="row">
 	<div class="acenter">
 		<div class="grid grid-cols-1 lg:rounded-lg relative">
 			<div class="flex flex-col gap-4 lg:flex-row items-center lg:items-start bg-white dark:bg-dark-800 rounded-lg p-4 shadow-custom">
@@ -176,6 +176,10 @@
 		</div>
 	</div>
 </section>
+
+<a href="/course" class="py-4 grid grid-cols-1 gap-4 acenter">
+	<img src="/images/course-banner.webp" class="w-full rounded-lg" alt="course banner"/>
+</a>
 
 <!-- school map section -->
 <section aria-label="map" class="row bg-body-darker dark:dark:bg-dark-900">
