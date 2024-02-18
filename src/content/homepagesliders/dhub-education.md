@@ -1,0 +1,11 @@
+---
+order: 1
+title: About Us
+text: dhub education
+subline: >-
+  Welcome to DHUB Education<br/>your gateway to a transformative International
+  educational experience. 
+href: /about-us
+background: /uploads/slides/homepage/dhub_1600x900.webp
+---
+
