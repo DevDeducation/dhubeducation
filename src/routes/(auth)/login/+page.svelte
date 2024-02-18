@@ -11,10 +11,8 @@
 
 	$: {
 		if (browser && getRedirect()) {
-			const { url, params } = $utilsstore.urlParams()
+			const { params } = $utilsstore.urlParams()
 			registerUrl += params
-			// const referral = url.searchParams.get("referral") as string
-			// $utilsstore.setLs("referral", referral)
 		}
 	}
 
