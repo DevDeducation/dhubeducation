@@ -47,54 +47,54 @@
     </div>
 
     <div class="absolute active transition-transform duration-200 ease-in-out flex flex-col w-full h-[calc(100%-72px)] overflow-auto" bind:this={mobileNavRef}>
-      <a href="/" data-type="menu" aria-label="home" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+      <a href="/" data-type="menu" aria-label="home" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
         <Home />
         <span>home</span>
       </a>
-      <a href="/about-us" data-type="menu" aria-label="about" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+      <a href="/about-us" data-type="menu" aria-label="about" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
         <About />
         <span>about</span>
       </a>
-      <a href="/services" data-type="menu" aria-label="service" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+      <a href="/services" data-type="menu" aria-label="service" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
         <Service />
         <span>services</span>
       </a>
-      <a href="/affiliate-program" data-type="menu" aria-label="affiliate program" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+      <a href="/affiliate-program" data-type="menu" aria-label="affiliate program" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
         <Affiliate />
         <span>affiliate program</span>
       </a>
-      <a href="/finance" data-type="menu" aria-label="finance" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+      <a href="/finance" data-type="menu" aria-label="finance" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
         <Finance />
         <span>finance</span>
       </a>
-      <a href="/course" data-type="menu" aria-label="finance" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+      <a href="/course" data-type="menu" aria-label="finance" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
         <Plane class="w-6 h-6" />
         <span>course</span>
       </a>
       <hr class="opacity-20"/>
       {#if session}
-        <a href="/affiliate" data-type="menu" aria-label="affiliate" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+        <a href="/affiliate" data-type="menu" aria-label="affiliate" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
           <span class="clickable"></span>
           <Grid />
           <span>dashboard</span>
         </a>
-        <a href="/profile" data-type="menu" aria-label="profile" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+        <a href="/profile" data-type="menu" aria-label="profile" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
           <span class="clickable"></span>
           <Profile />
           <span>profile</span>
         </a>
-        <a href="/referral" data-type="menu" aria-label="referral" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative">
+        <a href="/referral" data-type="menu" aria-label="referral" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
           <span class="clickable"></span>
           <List />
           <span>referral</span>
         </a>
-        <!-- <button data-name="signout btn" class=" border-b-dark-800/20 dark:border-b-white/20 p-4 capitalise font-semibold relative" on:click={logout}>
+        <!-- <button data-name="signout btn" class=" border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative" on:click={logout}>
           <span class="clickable"></span>
           <span>Signout</span>
         </button> -->
