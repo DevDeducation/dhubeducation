@@ -127,7 +127,7 @@
 				<Selectlist name="format" label="Course Format" list={courseformat} />
 			</div>
 		</fieldset>
-		<Button type="submit" class="w-full">Submit</Button>
+		<Button type="submit" class="w-full text-white">Submit</Button>
 	</form>
 	<div class="flex flex-col gap-2">
 		<p>

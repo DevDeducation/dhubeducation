@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Constants, educationlist, getDescription, getOgImage, utils } from '$lib';
+	import { Constants, countrylist, educationlist, getDescription, getOgImage, utils } from '$lib';
 	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
 	import { browser } from '$app/environment';
@@ -49,7 +49,7 @@
 		<form
 			id="enquiry"
 			action="?/enquiry"
-			class="mx-auto md:pb-4 md:max-w-2xl shadow-custom rounded-lg overflow-hidden flex flex-col items-center"
+			class="mx-auto md:pb-4 md:max-w-2xl shadow-custom rounded-lg overflow-hidden flex flex-col items-center py-4"
 			enctype="multipart/form-data"
 			method="post" use:enhance>
 			<div aria-label="form-fields" class="flex flex-col p-4 gap-4 w-full text-center">
@@ -94,7 +94,7 @@
 						placeholder="Email address"
 					/>
 
-					<Selectlist list={educationlist} name="countryOfInterest" label="Country of Interest" />
+					<Selectlist list={countrylist} name="countryOfInterest" label="Country of Interest" />
 					<Selectlist list={educationlist} name="levelOfStudy" label="Level of Study" />
 					<Selectlist list={yearlist} name="yearOfEntry" label="Year of Entry" />
 				</div>
@@ -183,7 +183,7 @@
 					placeholder="Please enter your enquiry here..."
 				/>
 			</div>
-			<Button type="submit" class="dark:text-white">
+			<Button type="submit" class="text-white">
 				Submit
 			</Button>
 		</form>
