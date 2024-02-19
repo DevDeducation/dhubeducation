@@ -32,7 +32,7 @@
 			</Button>
 		</Popover.Trigger>
 		<Popover.Content class="w-auto p-0 dark:border-none" align="start">
-			<DateInput class="dark:bg-dark" bind:value={date} />
+			<DateInput class="dark:bg-dark" bind:value={date} min={new Date("1900-01-01 00:00:00")} max={new Date("2030-01-01 00:00:00")} />
 		</Popover.Content>
 		<Input {name} type="hidden" bind:value />
 	</Popover.Root>
