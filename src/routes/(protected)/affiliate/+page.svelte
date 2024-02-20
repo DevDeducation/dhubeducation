@@ -57,20 +57,6 @@
 </script>
 
 <div class="flex flex-col gap-4">
-	<!-- <div
-		class="flex flex-col items-center gap-2 lg:flex-row justify-between p-4 shadow-custom rounded-lg bg-white dark:bg-dark-800">
-		<div class="flex flex-col lg:flex-row gap-2 items-center">
-			<p class="opacity-50">Referral link</p>
-			<p data-link={url} bind:this={toCopy} class="tocopy p-2 border-dashed border rounded-lg one-line w-full md:w-fit hidden md:block">{url}</p>
-			<p data-link={url} bind:this={toCopy} class="tocopy p-2 border-dashed border rounded-lg one-line w-[114px] md:w-fit block md:hidden">...{code}</p>
-		</div>
-		<button class="relative flex items-center gap-2 uppercase py-2 px-4 text-sm font-semibold bt bt-primary rounded-lg text-white w-[114px]" on:click={handleClick}>
-			<span class="clickable"></span>
-			<span class="spin-loader"></span>
-			<span class="txt w-fit" bind:this={status}>copy</span>
-			<Copy {copied}/>
-		</button>
-	</div> -->
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
 		
 		{#each dashboardList as dashboard, i}
