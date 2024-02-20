@@ -1,6 +1,5 @@
-<script lang="ts">
-	import Button from '$lib/components/buttons/Button.svelte';
-	import { Classes, Events, type TAlert } from '$lib';
+<script lang="ts"> 
+	import { Classes, Events, educationlist, type TAlert, referrallist, countrylist, currencylist } from '$lib';
 	import { onDestroy, onMount } from 'svelte';
 	import { enhance } from '$app/forms';
 	import '../../../../styles/intlTelInput.min.css';
@@ -8,6 +7,9 @@
 	import type { ActionData } from './$types';
 	import { utilsstore, alertstore, pagestore } from '$lib/stores/utilsstore';
 	import { goto } from '$app/navigation';
+	import { Input } from '$lib/components/ui/input';
+	import { Button } from '$lib/components/ui/button';
+	import Selectlist from '$lib/components/widgets/Selectlist.svelte';
 
 	export let form: ActionData
 
@@ -66,7 +68,7 @@
 <form
 	id="add"
 	action="/referral/add?/add"
-	class="max-w-lg md:pb-4 bg-white/90 dark:bg-dark-800/90 shadow-custom rounded-lg flex flex-col p-4 gap-4 w-full text-center"
+	class="max-w-lg md:pb-4 rounded-lg flex flex-col gap-4 w-full text-center"
 	enctype="multipart/form-data"
 	use:enhance
 	on:submit={handleSubmit}
@@ -77,127 +79,68 @@
 		<input type="text" hidden name="countryName" bind:value={countryName} />
 		<input type="text" hidden name="countryCode" bind:value={countryCode} />
 		<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
-		<input
+		<Input
 			type="text"
 			name="name"
-			class="input input-bordered w-full bg-transparent dark:text-white"
+			class="!border !border-muted dark:bg-transparent"
 			required
 			placeholder="Student's full name"
 		/>
-		<input
+		<Input
 			type="email"
 			name="email"
-			class="input input-bordered w-full bg-transparent dark:text-white"
+			class="!border !border-muted dark:bg-transparent"
 			required
 			placeholder="Student's email address"
 		/>
-		<input
+		<Input
 			type="text"
 			name="address"
-			class="input input-bordered w-full bg-transparent dark:text-white"
+			class="!border !border-muted dark:bg-transparent"
 			required
 			placeholder="Student's home address"
 		/>
-		<input
+		<Input
 			type="text"
 			name="nameOfSchool"
-			class="input input-bordered w-full bg-transparent dark:text-white"
+			class="!border !border-muted dark:bg-transparent"
 			required
 			placeholder="Name of the school"
 		/>
-		<input
+		<Input
 			type="text"
 			name="yearOfStudy"
-			class="input input-bordered w-full bg-transparent dark:text-white"
+			class="!border !border-muted dark:bg-transparent"
 			required
 			placeholder="Year of study"
 		/>
-		<select
-			class="select select-bordered w-full bg-transparent dark:text-white"
-			name="levelOfStudy"
-			required>
-			<option disabled selected>Level of Study</option>
-			<option class="dark:text-font" value="A-Level">A-Level</option>
-			<option class="dark:text-font" value="Foundation">Foundation</option>
-			<option class="dark:text-font" value="OND">OND</option>
-			<option class="dark:text-font" value="HND">HND</option>
-			<option class="dark:text-font" value="Top Up">Top Up</option>
-			<option class="dark:text-font" value="BSc.">BSc.</option>
-			<option class="dark:text-font" value="Pre-MSc.">Pre-MSc.</option>
-			<option class="dark:text-font" value="MSc.">MSc.</option>
-			<option class="dark:text-font" value="PhD.">PhD.</option>
-		</select>
-		<select
-			class="select select-bordered w-full bg-transparent dark:text-white"
-			name="typeOfReferral"
-			required>
-			<option disabled selected>Type of Referral</option>
-			<option class="dark:text-font" value="Customer">Customer</option>
-			<option class="dark:text-font" value="Employee">Employee</option>
-			<option class="dark:text-font" value="Influencer">Influencer</option>
-			<option class="dark:text-font" value="Teacher">Teacher</option>
-			<option class="dark:text-font" value="Vendor">Vendor</option>
-		</select>
-
-		<select
-			class="select select-bordered w-full bg-transparent dark:text-white"
-			name="countryOfInterest"
-			required>
-			<option disabled selected>Country of Interest</option>
-			<option class="dark:text-font" value="United States of America"
-				>USA (For UK students)</option>
-			<option class="dark:text-font" value="Malta">Malta</option>
-			<option class="dark:text-font" value="France (Paris)">France (Paris)</option>
-			<option class="dark:text-font" value="United Kingdom">United Kingdom</option>
-			<option class="dark:text-font" value="Netherland">Netherland</option>
-			<option class="dark:text-font" value="Canada">Canada</option>
-		</select>
+		<Selectlist list={educationlist} name="levelOfStudy" label="Level of Study" />
+		<Selectlist list={referrallist} name="typeOfReferral" label="Type of Referral" />
+		<Selectlist list={countrylist} name="countryOfInterest" label="Country of Interest" />
 	</div>
 	<input
 		type="tel"
 		name="phoneNumber"
 		bind:this={phoneInput}
-		class="input input-bordered w-full bg-transparent dark:text-white"
+		class="flex h-10 w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 !border !border-muted dark:bg-transparent"
 		id="phoneNumber"
 		required
 		placeholder="Phone Number"
 	/>
-	<div class="flex flex-col md:flex-row items-center gap-2">
-		<select
-		class="select select-bordered w-full bg-transparent dark:text-white"
-		name="currency"
-		required>
-			<option class="dark:text-font" value="USD ($)">USD ($)</option>
-			<option class="dark:text-font" value="GBP (£)">GBP (£)</option>
-			<option class="dark:text-font" value="NGN (₦)">NGN (₦)</option> 
-		</select>
-		<input
+	<div class="flex flex-col md:flex-row items-center gap-4">
+		
+		<Selectlist list={currencylist} name="currency" label="Currency" />
+		<Input
 			type="number"
 			name="tuition"
-			class="input input-bordered w-full bg-transparent dark:text-white"
+			class="!border !border-muted dark:bg-transparent"
 			required
 			placeholder="Tuition"
 		/>
 	</div>
-	<div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 		
-		<Button
-			options={{
-				dataname: 'add referee btn',
-				isAnchorLink: false,
-				btnType: 'submit',
-				text: 'add',
-				width: 'w-full md:w-fit self-center',
-				padding: 'py-3 px-6'
-			}}
-		/>
-		<button
-			on:click={$utilsstore.handleBack}
-			class='bg-transparent border-2 border-primary dark:border-white  h-[48px] py-3 px-6 w-full self-center rounded-lg uppercase text-primary dark:text-white font-semibold relative flex items-center justify-center gap-2 md:w-fit'
-			type="button">
-			<span class="clickable"></span>
-			<span class="spin-loader"></span>
-			<span class="txt">back</span>
-		</button> 
+		<Button type="submit" class="text-white">Add</Button>
+		<Button type="button" on:click={$utilsstore.handleBack} variant="outline" class="dark:text-white text-primary bg-transparent">Back</Button>
 	</div>
 </form>

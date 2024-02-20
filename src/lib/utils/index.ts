@@ -526,3 +526,9 @@ export const countrylist = [
   { value: 'netherland', label: 'Netherland' },
   { value: 'canada', label: 'Canada' },
 ];
+
+export const currencylist = [
+  { value: 'USD ($)', label: 'USD ($)' },
+  { value: 'GBP (£)', label: 'GBP (£)' },
+  { value: 'NGN (₦)', label: 'NGN (₦)' },
+];

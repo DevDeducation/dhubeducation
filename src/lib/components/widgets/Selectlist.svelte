@@ -1,22 +1,13 @@
 <script lang="ts">
   import * as Select from "$lib/components/ui/select"; 
 	import { cn } from "$lib/utils";
-  import { createEventDispatcher } from "svelte";
 
   export let name: string = ""
   export let label: string = ""
   export let list: { value: string, label: string }[] = []
-  export let classes: string = ""
-  export let value: string = ""
+  export let classes: string = "" 
 
-  $: placeholder = value.length == 0 ? `Select a ${label}` : value
-
-  const dispatch = createEventDispatcher()
-
-  function handleChange(evt: Event) {
-    const target = evt.target as HTMLInputElement
-    dispatch('change', target.value);
-  }
+  const placeholder = `Select a ${label}`
 </script>
 
 <Select.Root>
@@ -31,5 +22,5 @@
       {/each}
     </Select.Group>
   </Select.Content>
-  <Select.Input { value } { name } on:input={handleChange} />
+  <Select.Input { name } />
 </Select.Root>

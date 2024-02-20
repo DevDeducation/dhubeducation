@@ -82,9 +82,9 @@ method="post">
 				bind:value={user.address}
 				placeholder="Home address"
 			/>
-			<Selectlist bind:value={user.levelOfStudy} list={educationlist} name="levelOfStudy" label="Level of Study" />
-			<Selectlist bind:value={user.typeOfReferral} list={referrallist} name="typeOfReferral" label="Type of Referral" />
-			<Selectlist bind:value={user.countryOfInterest} list={countrylist} name="countryOfInterest" label="Country of Interest" />
+			<Selectlist list={educationlist} name="levelOfStudy" label="Level of Study" />
+			<Selectlist list={referrallist} name="typeOfReferral" label="Type of Referral" />
+			<Selectlist list={countrylist} name="countryOfInterest" label="Country of Interest" />
 			<Input
 				type="tel"
 				name="phoneNumber"
