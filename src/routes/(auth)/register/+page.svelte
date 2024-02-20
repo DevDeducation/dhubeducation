@@ -193,7 +193,7 @@
 				action="?/google"
 				bind:this={googleRegistrationForm}
 				on:submit={handleGoogleSubmit}
-				class="mx-auto flex w-full flex-col gap-4 overflow-hidden rounded-lg p-4 text-center shadow-custom md:max-w-lg md:pb-4"
+				class="mx-auto flex w-full flex-col gap-4 overflow-hidden rounded-lg text-center shadow-custom md:max-w-4xl md:pb-4"
 				enctype="multipart/form-data"
 				use:enhance
 				method="post"
@@ -208,63 +208,72 @@
 					<input type="text" hidden name="countryCode" bind:value={countryCode} />
 					<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
 					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-						<Input
-							type="text"
-							name="name"
-							class="!border !border-muted dark:bg-transparent"
-							id="name"
-							hidden
-							bind:value={session.name}
-							required
-							placeholder="Full name"
-						/>
-						<Input
-							type="text"
-							name="email"
-							class="!border !border-muted dark:bg-transparent"
-							id="email"
-							bind:value={session.email}
-							hidden
-							required
-							placeholder="Email address"
-						/>
-						<input type="text" hidden name="authtype" value={Constants.GOOGLE} />
-						<Input
-							type="text"
-							name="address"
-							class="!border !border-muted dark:bg-transparent"
-							id="address"
-							required
-							placeholder="Home address"
-						/>
-						<Selectlist name="levelOfStudy" label="Level of study" list={educationlist} />
-						<Selectlist name="typeOfReferral" label="Type of Referral" list={referrallist} />
-						<Selectlist name="countryOfInterest" label="Country of Interest" list={referrallist} />
-						<input
-							type="tel"
-							name="phoneNumber"
-							bind:this={phoneInput}
-							class="flex h-10 w-full rounded-md !border !border-muted bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-transparent"
-							id="phoneNumber"
-							required
-							placeholder="Phone Number"
-						/>
-					</div>
-					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-						<select
-							class="select select-bordered md:col-span-2 w-full bg-transparent dark:text-white"
-							name="paymentMethod"
-							on:change={handlePaymentMethod}
-							required
-						>
-							<option disabled>Payment Method</option>
-							<option class="dark:text-font" value="bank" selected>Bank (Nigeria)</option>
-							<option class="dark:text-font" value="paypal">PayPal (Other Countries)</option>
-						</select>
+						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+							<Input
+								type="text"
+								name="name"
+								class="!border !border-muted dark:bg-transparent"
+								id="name"
+								hidden
+								bind:value={session.name}
+								required
+								placeholder="Full name"
+							/>
+							<Input
+								type="text"
+								name="email"
+								class="!border !border-muted dark:bg-transparent"
+								id="email"
+								bind:value={session.email}
+								hidden
+								required
+								placeholder="Email address"
+							/>
+							<input type="text" hidden name="authtype" value={Constants.GOOGLE} />
+							<Input
+								type="text"
+								name="address"
+								class="!border !border-muted dark:bg-transparent"
+								id="address"
+								required
+								placeholder="Home address"
+							/>
+							<Selectlist name="levelOfStudy" label="Level of study" list={educationlist} />
+							<Selectlist
+								name="typeOfReferral"
+								label="Type of Referral"
+								list={referrallist}
+								classes="md:col-span-2"
+							/>
+							<Selectlist
+								name="countryOfInterest"
+								label="Country of Interest"
+								list={referrallist}
+								classes="md:col-span-2"
+							/>
+							<div class="md:col-span-2">
+								<input
+									type="tel"
+									name="phoneNumber"
+									bind:this={phoneInput}
+									class="flex h-10 w-full rounded-md !border !border-muted bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-transparent"
+									id="phoneNumber"
+									required
+									placeholder="Phone Number"
+								/>
+							</div>
+							<Selectlist
+								name="paymentMethod"
+								label="Payment Method"
+								list={paymentmethodlist}
+								on:change={handleChange}
+								classes="md:col-span-2"
+							/>
+						</div>
 						<Payment {method} {user} />
 					</div>
 				</div>
-				<Button type="submit" class="text-white">Register</Button>
+				<Button type="submit" class="text-white w-fit mx-auto">Register</Button>
 				<hr class="dark:opacity-30" />
 				<p class="flex items-center justify-center gap-2 font-semibold">
 					<span>Already have an account?</span>
@@ -355,11 +364,9 @@
 							classes="md:col-span-2"
 						/>
 					</div>
-					<div class="grid grid-cols-1 gap-4">
-						<Payment {method} {user} />
-					</div>
+					<Payment {method} {user} />
 				</div>
-				<Button type="submit" class="text-white mx-auto w-full md:w-fit">Register</Button>
+				<Button type="submit" class="mx-auto w-full text-white md:w-fit">Register</Button>
 				<hr class="dark:opacity-30" />
 				<p class="flex items-center justify-center gap-2 font-semibold">
 					<span>Already have an account?</span>
