@@ -359,7 +359,7 @@
 						<Payment {method} {user} />
 					</div>
 				</div>
-				<Button type="submit" class="text-white">Register</Button>
+				<Button type="submit" class="text-white mx-auto w-full md:w-fit">Register</Button>
 				<hr class="dark:opacity-30" />
 				<p class="flex items-center justify-center gap-2 font-semibold">
 					<span>Already have an account?</span>
