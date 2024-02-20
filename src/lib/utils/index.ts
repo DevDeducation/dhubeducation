@@ -532,3 +532,8 @@ export const currencylist = [
   { value: 'GBP (£)', label: 'GBP (£)' },
   { value: 'NGN (₦)', label: 'NGN (₦)' },
 ];
+
+export const paymentmethodlist = [
+  { value: 'bank', label: 'Bank (Nigeria)' },
+  { value: 'paypal', label: 'PayPal (Other Countries)' }
+];

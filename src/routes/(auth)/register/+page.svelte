@@ -1,6 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Alerts, Classes, Constants, Events, Flags, educationlist, referrallist, type iEmailPassword, type iSession, type iUser } from '$lib';
+	import {
+		Alerts,
+		Classes,
+		Constants,
+		Events,
+		Flags,
+		educationlist,
+		referrallist,
+		type iEmailPassword,
+		type iSession,
+		type iUser,
+		paymentmethodlist,
+		type iValueLabel
+	} from '$lib';
 	import { onDestroy, onMount } from 'svelte';
 	import { enhance } from '$app/forms';
 	import '../../../styles/intlTelInput.min.css';
@@ -22,39 +35,39 @@
 	const session: iSession = $page.data.userSession;
 
 	const user: iUser = {
-  id: 1,
-  address: "",
-  authtype: "",
-  countryCode: "",
-  countryName: "",
-  countryIsoCode: "",
-  countryOfInterest: "",
-  email: "",
-  levelOfStudy: "",
-  name: "",
-  phoneNumber: "",
-  role: "",
-  typeOfReferral: "",
-  referer: "",
-  timestamp: "",
-  confirmed: "",
-  paid: "",
-  actions: "",
-  nameOfSchool: "",
-  tuition: "",
-  currency: "",
-  yearOfStudy: "",
-  paymentMethod: "",
-  paypalEmail: "",
-  bankName: "",
-  accountName: "",
-  accountNumber: "",
-	sortCode: "",
-	swiftCode: ""
-}
+		id: 1,
+		address: '',
+		authtype: '',
+		countryCode: '',
+		countryName: '',
+		countryIsoCode: '',
+		countryOfInterest: '',
+		email: '',
+		levelOfStudy: '',
+		name: '',
+		phoneNumber: '',
+		role: '',
+		typeOfReferral: '',
+		referer: '',
+		timestamp: '',
+		confirmed: '',
+		paid: '',
+		actions: '',
+		nameOfSchool: '',
+		tuition: '',
+		currency: '',
+		yearOfStudy: '',
+		paymentMethod: '',
+		paypalEmail: '',
+		bankName: '',
+		accountName: '',
+		accountNumber: '',
+		sortCode: '',
+		swiftCode: ''
+	};
 
 	let phoneInput: HTMLElement;
-	let googleRegistrationForm: HTMLFormElement
+	let googleRegistrationForm: HTMLFormElement;
 
 	let redirectSuffix: string = '';
 	let referer: string = $utilsstore.encodeString(Constants.DHUBEDUCATION_GMAIL).toString();
@@ -62,31 +75,40 @@
 	let countryCode: string = '+234';
 	let countryIsoCode: string = 'ng';
 	let phoneInputIntl: intlTelInput.Plugin;
-	
-	let method: string = Constants.BANK
+
+	let method: string = Constants.BANK;
 
 	$: {
 		if (browser) {
 			const { url, params } = $utilsstore.urlParams();
-			getRedirect() && (loginUrl += params)
+			getRedirect() && (loginUrl += params);
 			const urlReferer = url.searchParams.get('referer');
 
-			referer = urlReferer ? urlReferer : $utilsstore.encodeString(Constants.DHUBEDUCATION_GMAIL).toString();
-			console.log("referer is", referer, "urlReferer is", urlReferer, "typeof urlReferer", typeof urlReferer)
+			referer = urlReferer
+				? urlReferer
+				: $utilsstore.encodeString(Constants.DHUBEDUCATION_GMAIL).toString();
+			console.log(
+				'referer is',
+				referer,
+				'urlReferer is',
+				urlReferer,
+				'typeof urlReferer',
+				typeof urlReferer
+			);
 		}
 	}
 
 	const handleCountryChange = (evt: Event) => {
 		countryCode = `+${phoneInputIntl.getSelectedCountryData().dialCode}`;
-		countryIsoCode = phoneInputIntl.getSelectedCountryData().iso2
+		countryIsoCode = phoneInputIntl.getSelectedCountryData().iso2;
 		countryName = phoneInputIntl.getSelectedCountryData().name;
 	};
 
 	const handleEmailAndPasswordSubmit = async (evt: SubmitEvent) => {
 		const form = evt.target as HTMLFormElement;
 		const formData = new FormData(form);
-		const records = Object.fromEntries(formData.entries()) as Record<string, any>
-		console.log("records", records)
+		const records = Object.fromEntries(formData.entries()) as Record<string, any>;
+		console.log('records', records);
 		const emailPassword: iEmailPassword = {
 			email: records.email as string,
 			password: records.password as string
@@ -94,15 +116,15 @@
 		delete records.password;
 		delete records.redirect;
 
-		records.confirmed = Flags.TRUE
-		records.paid = Flags.FALSE
+		records.confirmed = Flags.TRUE;
+		records.paid = Flags.FALSE;
 
 		const button = evt.submitter as HTMLElement;
 		try {
 			button.classList.add(Classes.LOADING);
 			await handleRegisterWithEmailAndPassword(emailPassword);
-			
-			console.log("submitted records", records)
+
+			console.log('submitted records', records);
 			// $utilsstore.setLs('referer', records.referer as string);
 			await fetch('/register', {
 				method: 'POST',
@@ -122,13 +144,19 @@
 	};
 
 	const handleGoogleSubmit = async (evt: Event) => {
-		googleRegistrationForm.classList.add(Classes.LOADING)
-	}
+		googleRegistrationForm.classList.add(Classes.LOADING);
+	};
+
+	const handleChange = (evt: CustomEvent) => {
+		console.log(evt);
+		const detail = evt.detail as iValueLabel;
+		method = detail.value;
+	};
 
 	const handlePaymentMethod = async (evt: Event) => {
-		const target = evt.target as HTMLSelectElement
-		method = target.value
-	}
+		const target = evt.target as HTMLSelectElement;
+		method = target.value;
+	};
 
 	onMount(() => {
 		const locationUrl = new URL(location.href);
@@ -138,10 +166,10 @@
 		// handling international phone input
 		phoneInputIntl = intlTelInput(phoneInput, {
 			// utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.min.js',
-      utilsScript: '/utils.min.js',
+			utilsScript: '/utils.min.js',
 			preferredCountries: ['uk'],
 			separateDialCode: true,
-			initialCountry: "ng"
+			initialCountry: 'ng'
 		});
 
 		countryName = phoneInputIntl.getSelectedCountryData().name;
@@ -158,17 +186,18 @@
 	<title>Register | DHUB Education</title>
 </svelte:head>
 <div>
-	<section class="py-4 acenter">
+	<section class="acenter py-4">
 		{#if session}
 			<form
 				id="register"
 				action="?/google"
 				bind:this={googleRegistrationForm}
 				on:submit={handleGoogleSubmit}
-				class="mx-auto md:pb-4 md:max-w-lg shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center"
+				class="mx-auto flex w-full flex-col gap-4 overflow-hidden rounded-lg p-4 text-center shadow-custom md:max-w-lg md:pb-4"
 				enctype="multipart/form-data"
 				use:enhance
-				method="post">
+				method="post"
+			>
 				<h1 class="sub-title uppercase">Register to continue</h1>
 				<hr class="dark:opacity-30" />
 				<div class="flex flex-col gap-4">
@@ -178,7 +207,7 @@
 					<input type="text" hidden name="role" value={Constants.USER} />
 					<input type="text" hidden name="countryCode" bind:value={countryCode} />
 					<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 						<Input
 							type="text"
 							name="name"
@@ -215,32 +244,35 @@
 							type="tel"
 							name="phoneNumber"
 							bind:this={phoneInput}
-							class="!border !border-muted dark:bg-transparent"
+							class="flex h-10 w-full rounded-md !border !border-muted bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-transparent"
 							id="phoneNumber"
 							required
 							placeholder="Phone Number"
 						/>
 					</div>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 						<select
-							class="select select-bordered w-full bg-transparent dark:text-white col-span-2"
+							class="select select-bordered md:col-span-2 w-full bg-transparent dark:text-white"
 							name="paymentMethod"
 							on:change={handlePaymentMethod}
-							required>
+							required
+						>
 							<option disabled>Payment Method</option>
 							<option class="dark:text-font" value="bank" selected>Bank (Nigeria)</option>
 							<option class="dark:text-font" value="paypal">PayPal (Other Countries)</option>
 						</select>
-						<Payment { method } { user } />
+						<Payment {method} {user} />
 					</div>
 				</div>
 				<Button type="submit" class="text-white">Register</Button>
 				<hr class="dark:opacity-30" />
-				<p class="font-semibold flex items-center justify-center gap-2">
+				<p class="flex items-center justify-center gap-2 font-semibold">
 					<span>Already have an account?</span>
 					<a
 						href="/login"
-						class="text-red-500 dark:text-white transition duration-150 ease-in-out underline">Login</a>
+						class="text-red-500 underline transition duration-150 ease-in-out dark:text-white"
+						>Login</a
+					>
 				</p>
 			</form>
 		{:else}
@@ -248,21 +280,21 @@
 				id="register"
 				action="?/emailandpassword"
 				on:submit|preventDefault={handleEmailAndPasswordSubmit}
-				class="mx-auto md:pb-4 md:max-w-lg shadow-custom rounded-lg overflow-hidden flex flex-col p-4 gap-4 w-full text-center"
+				class="mx-auto flex w-full flex-col gap-4 overflow-hidden rounded-lg text-center shadow-custom md:max-w-4xl md:pb-4"
 				enctype="multipart/form-data"
 				use:enhance
-				method="post">
+				method="post"
+			>
 				<h1 class="sub-title uppercase">Register to continue</h1>
 				<hr class="dark:opacity-30" />
-				<div class="flex flex-col gap-4">
-					<input type="text" hidden name="redirect" bind:value={redirectSuffix} />
-					<input type="text" hidden name="referer" bind:value={referer} />
-					<input type="text" hidden name="countryName" bind:value={countryName} />
-					<input type="text" hidden name="role" value={Constants.USER} />
-					<input type="text" hidden name="countryCode" bind:value={countryCode} />
-					<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
-
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<input type="text" hidden name="redirect" bind:value={redirectSuffix} />
+				<input type="text" hidden name="referer" bind:value={referer} />
+				<input type="text" hidden name="countryName" bind:value={countryName} />
+				<input type="text" hidden name="role" value={Constants.USER} />
+				<input type="text" hidden name="countryCode" bind:value={countryCode} />
+				<input type="text" hidden name="countryIsoCode" bind:value={countryIsoCode} />
+				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 						<Input
 							type="text"
 							name="name"
@@ -298,38 +330,42 @@
 						/>
 						<Selectlist name="levelOfStudy" label="Level of study" list={educationlist} />
 						<Selectlist name="typeOfReferral" label="Type of Referral" list={referrallist} />
-						<Selectlist name="countryOfInterest" label="Country of Interest" list={referrallist} />
-						<input
-							type="tel"
-							name="phoneNumber"
-							bind:this={phoneInput}
-							class="!border !border-muted dark:bg-transparent"
-							id="phoneNumber"
-							required
-							placeholder="Phone Number"
+						<Selectlist
+							name="countryOfInterest"
+							label="Country of Interest"
+							list={referrallist}
+							classes="md:col-span-2"
+						/>
+						<div class="md:col-span-2">
+							<input
+								type="tel"
+								name="phoneNumber"
+								bind:this={phoneInput}
+								class="flex h-10 w-full rounded-md !border !border-muted bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-transparent"
+								id="phoneNumber"
+								required
+								placeholder="Phone Number"
+							/>
+						</div>
+						<Selectlist
+							name="paymentMethod"
+							label="Payment Method"
+							list={paymentmethodlist}
+							on:change={handleChange}
+							classes="md:col-span-2"
 						/>
 					</div>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-						<select
-							class="select select-bordered w-full bg-transparent dark:text-white col-span-2"
-							name="paymentMethod"
-							on:change={handlePaymentMethod}
-							required>
-							<option disabled>Payment Method</option>
-							<option class="dark:text-font" value="bank" selected>Bank (Nigeria)</option>
-							<option class="dark:text-font" value="paypal">PayPal (Other Countries)</option>
-						</select>
-						<Payment { method } { user } />
+					<div class="grid grid-cols-1 gap-4">
+						<Payment {method} {user} />
 					</div>
-
 				</div>
 				<Button type="submit" class="text-white">Register</Button>
 				<hr class="dark:opacity-30" />
-				<p class="font-semibold flex items-center justify-center gap-2">
+				<p class="flex items-center justify-center gap-2 font-semibold">
 					<span>Already have an account?</span>
 					<a
 						href={loginUrl}
-						class="text-red-500 dark:text-white transition duration-150 ease-in-out underline"
+						class="text-red-500 underline transition duration-150 ease-in-out dark:text-white"
 						>Login</a
 					>
 				</p>

@@ -306,3 +306,9 @@ export interface iPopupState {
   isLive: boolean;
   startTimestamp: number;
 }
+
+export interface iValueLabel {
+  value: string;
+  label: string;
+  disabled?: boolean
+}

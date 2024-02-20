@@ -631,3 +631,7 @@ text {
 .iti__country-list {
   @apply w-full dark:bg-dark-900
 }
+
+.iti {
+  width: 100% !important;
+}
