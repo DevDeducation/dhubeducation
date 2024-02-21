@@ -62,7 +62,9 @@
       </audio>
       <div class="w-full img flex flex-col gap-2" id="bannerPopup">
         <Followuslinks />
-        <img class="w-full aspect-video" src="" alt="popup"/>
+        <a href="/course">
+          <img class="w-full aspect-video" src="" alt="popup"/>
+        </a>
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
