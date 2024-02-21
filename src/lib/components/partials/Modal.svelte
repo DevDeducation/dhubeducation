@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { Button } from '$lib/components/ui/button';
 	import { Classes } from "$lib/constants";
 	import { alertstore, utilsstore } from "$lib/stores/utilsstore";
 	import { handleClick } from "$lib/utils/index";
-	import Button from "../buttons/Button.svelte";
 	import CloseBtn from "../buttons/CloseBtn.svelte";
 	import Followuslinks from "./Followuslinks.svelte";
 
@@ -24,19 +25,20 @@
         method: 'post',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(entries)
-      })
-      console.log("after firing")
-      const data = await res.json()
-      console.log("after json")
+      }) 
+      const data = await res.json() 
       button.classList.remove(Classes.LOADING)
       $utilsstore.setAlert(data.message, data.status, alertstore)
       modalRef.classList.add(Classes.HIDDEN)
-    } catch (error: any) {
-      console.log("errorrrr")
+    } catch (error: any) { 
       button.classList.remove(Classes.LOADING)
-      $utilsstore.setAlert(error.message, "error", alertstore)
-      console.log(`error: ${error.message}`)
+      $utilsstore.setAlert(error.message, "error", alertstore) 
     }
+  }
+
+  const handlePopupClick = (evt: Event) => {
+    $utilsstore.resetAudioAndVideo().hideMedia().setPopupStamp()
+    goto("/course")
   }
   
 </script>
@@ -62,9 +64,12 @@
       </audio>
       <div class="w-full img flex flex-col gap-2" id="bannerPopup">
         <Followuslinks />
-        <a href="/course">
+        <a href="/course" class="relative w-full h-full">
           <img class="w-full aspect-video" src="" alt="popup"/>
         </a>
+        <Button type="button" class="text-white w-full md:w-fit mx-auto" on:click={handlePopupClick}>
+          Click to Signup
+        </Button>
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
@@ -83,16 +88,7 @@
             bind:value={email}
             placeholder="Email address"
           />
-          <Button
-            options={{
-              dataname: 'subscribe',
-              isAnchorLink: false,
-              btnType: 'submit',
-              text: 'subscribe',
-              otherclasses: 'w-full md:w-fit',
-              padding: 'py-3 px-6'
-            }}
-          />
+          <Button type="submit" class="w-full md:w-fit dark:bg-white dark:text-primary bg-primary text-white">subscribe</Button>
         </form>
       </div>
     </div>
