@@ -316,7 +316,7 @@
 					<SkeletonPartnercard small={true} />
 				{/each}
 			{:then value}
-				{#each value as partner, i}
+				{#each value.slice(0,3) as partner, i}
 					<Partnercard small={true} {partner} />
 				{/each}
 			{/await}
