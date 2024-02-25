@@ -319,7 +319,7 @@
 				{#each value.slice(0,3) as partner, i}
 					<Partnercard small={true} {partner} />
 				{/each}
-			{/await}
+			{/await} 
 		</div>
 		<Button
 			options={{
