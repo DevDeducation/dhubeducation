@@ -79,6 +79,11 @@
         <Finance />
         <span>finance</span>
       </a>
+      <a href="/blog" data-type="menu" aria-label="referral" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
+        <span class="clickable"></span>
+        <Blog />
+        <span>blog</span>
+      </a>
       <hr class="opacity-20"/>
       {#if session}
         <a href="/affiliate" data-type="menu" aria-label="affiliate" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
@@ -95,11 +100,6 @@
           <span class="clickable"></span>
           <List />
           <span>referral</span>
-        </a>
-        <a href="/blog" data-type="menu" aria-label="referral" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
-          <span class="clickable"></span>
-          <Blog />
-          <span>blog</span>
         </a>
         <div class="px-4 mb-2">
           <Button
