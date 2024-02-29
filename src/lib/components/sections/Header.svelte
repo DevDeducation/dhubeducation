@@ -52,14 +52,14 @@
 						href="/services">Services</a
 					>
 					<a
-						aria-label="affiliate"
+						aria-label="course"
 						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
-						href="/affiliate-program">Affiliate</a
+						href="/course">Course</a
 					>
 					<a
 						aria-label="affiliate"
 						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
-						href="/finance">Finance</a
+						href="/affiliate-program">Affiliate</a
 					>
 					<a
 						aria-label="partners"
@@ -67,9 +67,9 @@
 						href="/partners">Partners</a
 					>
 					<a
-						aria-label="course"
+						aria-label="affiliate"
 						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
-						href="/course">Course</a
+						href="/finance">Finance</a
 					>
 				{/if}
 				<Button class="text-white">
