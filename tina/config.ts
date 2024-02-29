@@ -424,16 +424,23 @@ export default defineConfig({
             // if disabled, the editor can not edit the filename
             readonly: true,
             // Example of using a custom slugify function
-            slugify: (values) => values?.title ? values.title.split(' ').join('-').toLowerCase() : 'no-title',
+            slugify: (values) => values?.name ? values.name.split(' ').join('-').toLowerCase() : 'no-title',
           },
         },
         fields: [
           { 
             type: "string",
-            name: "title",
-            label: "Title",
+            name: "name",
+            label: "Name",
             isTitle: true,
             required: true,
+          },
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+            options: ["BA (Hons)", "BSc (Hons)", "HND", "MA" ]
           },
           {
             type: "image",
