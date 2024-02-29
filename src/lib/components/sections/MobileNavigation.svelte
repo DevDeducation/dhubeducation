@@ -18,6 +18,7 @@
 	import Affiliate from "../icons/Affiliate.svelte";
 	import Finance from "../icons/Finance.svelte";
   import { Plane } from "lucide-svelte"
+	import Blog from "../icons/Blog.svelte";
 
   let mobileNavRef: HTMLElement
 
@@ -94,10 +95,11 @@
           <List />
           <span>referral</span>
         </a>
-        <!-- <button data-name="signout btn" class=" border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative" on:click={logout}>
+        <a href="/blog" data-type="menu" aria-label="referral" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
           <span class="clickable"></span>
-          <span>Signout</span>
-        </button> -->
+          <Blog />
+          <span>blog</span>
+        </a>
         <div class="px-4 mb-2">
           <Button
           on:click={logout}
