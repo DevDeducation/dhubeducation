@@ -19,6 +19,7 @@
 	import Finance from "../icons/Finance.svelte";
   import { Plane } from "lucide-svelte"
 	import Blog from "../icons/Blog.svelte";
+	import Course from "../icons/Course.svelte";
 
   let mobileNavRef: HTMLElement
 
@@ -63,10 +64,10 @@
         <Service />
         <span>services</span>
       </a>
-      <a href="/course" data-type="menu" aria-label="finance" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
+      <a href="/courses" data-type="menu" aria-label="finance" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>
-        <Plane class="w-6 h-6" />
-        <span>course</span>
+        <Course />
+        <span>courses</span>
       </a>
       <a href="/affiliate-program" data-type="menu" aria-label="affiliate program" rel="prefetch" class="flex items-center gap-2  border-b-dark-800/20 dark:border-b-white/20 p-4 capitalize font-semibold relative">
         <span class="clickable"></span>

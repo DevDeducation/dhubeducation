@@ -54,7 +54,7 @@
 					<a
 						aria-label="course"
 						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
-						href="/course">Course</a
+						href="/courses">Courses</a
 					>
 					<a
 						aria-label="affiliate"

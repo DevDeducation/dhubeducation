@@ -177,7 +177,7 @@
 	</div>
 </section>
 
-<a href="/course" class="py-4 grid grid-cols-1 gap-4 acenter max-w-2xl mx-auto row">
+<a href="/courses" class="py-4 grid grid-cols-1 gap-4 acenter max-w-2xl mx-auto row">
 	<img src="/images/course-banner.webp" class="w-full rounded-lg" alt="course banner"/>
 </a>
 
