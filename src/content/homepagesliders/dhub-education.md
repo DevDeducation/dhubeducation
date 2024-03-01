@@ -1,6 +1,6 @@
 ---
 order: 1
-title: About Us
+title: Learn more
 text: dhub education
 subline: >-
   Welcome to DHUB Education<br/>your gateway to a transformative International
