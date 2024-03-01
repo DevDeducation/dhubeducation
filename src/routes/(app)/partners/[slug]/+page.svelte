@@ -11,7 +11,7 @@
 
 	$: partner = loaded.partner as iPartner;
 
-	
+	$: console.log({ partner })
 	
 	$: title = `${partner.name} | DHUB Education`
 	$: description = getDescription(partner.name)
