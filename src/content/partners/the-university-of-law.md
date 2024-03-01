@@ -17,7 +17,7 @@ What really sets us apart from other universities is the guiding principle that 
 
 ## Our Heritage
 
-We are the largest provider of legal education in the UK (HESA 2021/22). We can trace our origins to 1876 with the formation of tutorial firm Gibson & Weldon, and in 2016, we opened our leading Business School. With a rich heritage and a reputation for innovation and contemporary teaching practices, we continuously focus on developing the best legal and business minds.
+We are the largest provider of legal education in the UK (HESA 2021/22). We can trace our origins to 1876 with the formation of tutorial firm Gibson & Weldon, and in 2016, we opened our leading Business School. With a rich heritage and a reputation for innovation and contemporary teaching practices, we continuously focus on developing the best legal and business minds. 
 
 ## Innovative and Contemporary Teaching Practices
 
