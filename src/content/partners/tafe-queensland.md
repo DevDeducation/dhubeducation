@@ -3,8 +3,8 @@ name: Tafe Queensland
 type: Vocational Training
 website: 'https://tafeqld.edu.au/'
 logo: /uploads/schools/australia/tafe-queensland.svg
-landscapepic: /uploads/schools/australia/tafe-queensland_1600x900.png
-squarepic: /uploads/schools/australia/tafe-queensland_900x900.png
+landscapepic: /uploads/schools/australia/tafe-queensland_1600x900.webp
+squarepic: /uploads/schools/australia/tafe-queensland_900x900.webp
 country: Australia
 countrycode: AU
 latitude: '-27.580360841184845'
