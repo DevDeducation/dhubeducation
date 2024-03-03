@@ -56,78 +56,81 @@
 		method="post"
 		action=""
 		enctype="multipart/form-data"
-		use:enhance
-		class="grid grid-cols-1 gap-4 md:grid-cols-2"
-	>
-		<fieldset>
-			<legend>Personal Information</legend>
-			<div class="flex flex-col gap-2">
-				<Input
-					name="fullname"
-					placeholder="Full name"
-					type="text"
-					required
-					class="!border !border-muted dark:bg-transparent"
-				/>
-				<Input
-					name="email"
-					placeholder="Email"
-					type="email"
-					required
-					class="!border !border-muted dark:bg-transparent"
-				/>
-				<Datepicker label="Date of birth" name="dateofbirth" />
-				<Selectlist name="gender" label="Gender" list={genderlist} />
-				<Input
-					name="country"
-					placeholder="Country"
-					class="!border !border-muted dark:bg-transparent"
-				/>
-				<Input name="city" placeholder="City" class="!border !border-muted dark:bg-transparent" />
-				<Input
-					name="phone"
-					placeholder="Phone Number"
-					type="text"
-					required
-					class="!border !border-muted dark:bg-transparent"
-				/>
+		class="flex flex-col gap-4 items-center justify-center w-full max-w-5xl mx-auto"
+		use:enhance>
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3 w-full">
+			<fieldset>
+				<legend>Personal Information</legend>
+				<div class="flex flex-col gap-2">
+					<Input
+						name="fullname"
+						placeholder="Full name"
+						type="text"
+						required
+						class="!border !border-muted dark:bg-transparent"
+					/>
+					<Input
+						name="email"
+						placeholder="Email"
+						type="email"
+						required
+						class="!border !border-muted dark:bg-transparent"
+					/>
+					<Datepicker label="Date of birth" name="dateofbirth" />
+					<Selectlist name="gender" label="Gender" list={genderlist} />
+					<Input
+						name="country"
+						placeholder="Country"
+						class="!border !border-muted dark:bg-transparent"
+					/>
+					<Input name="city" placeholder="City" class="!border !border-muted dark:bg-transparent" />
+					<Input
+						name="phone"
+						placeholder="Phone Number"
+						type="text"
+						required
+						class="!border !border-muted dark:bg-transparent"
+					/>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Educational Background</legend>
+				<div class="flex flex-col gap-2">
+					<Radiogroup name="education" list={educationlist} />
+				</div>
+			</fieldset>
+			<div class="flex flex-col gap-4">
+				<fieldset>
+					<legend>Current Employer (If any)</legend>
+					<div class="flex flex-col gap-2">
+						<Input
+							name="employer"
+							placeholder="Employer"
+							class="!border !border-muted dark:bg-transparent"
+						/>
+						<Input
+							name="jobtitle"
+							placeholder="Job Title"
+							class="!border !border-muted dark:bg-transparent"
+						/>
+						<Input
+							name="experience"
+							type="number"
+							placeholder="Years of experience in travel industry"
+							class="!border !border-muted dark:bg-transparent"
+						/>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Course Preferences</legend>
+					<div class="flex flex-col gap-2">
+						<Selectlist name="day" label="Preferred Day" list={preferredday} />
+						<Selectlist name="format" label="Course Format" list={courseformat} />
+					</div>
+				</fieldset>
 			</div>
-		</fieldset>
-		<fieldset>
-			<legend>Educational Background</legend>
-			<div class="flex flex-col gap-2">
-				<Radiogroup name="education" list={educationlist} />
-			</div>
-		</fieldset>
-		<fieldset>
-			<legend>Current Employer (If any)</legend>
-			<div class="flex flex-col gap-2">
-				<Input
-					name="employer"
-					placeholder="Employer"
-					class="!border !border-muted dark:bg-transparent"
-				/>
-				<Input
-					name="jobtitle"
-					placeholder="Job Title"
-					class="!border !border-muted dark:bg-transparent"
-				/>
-				<Input
-					name="experience"
-					type="number"
-					placeholder="Years of experience in travel industry"
-					class="!border !border-muted dark:bg-transparent"
-				/>
-			</div>
-		</fieldset>
-		<fieldset>
-			<legend>Course Preferences</legend>
-			<div class="flex flex-col gap-2">
-				<Selectlist name="day" label="Preferred Day" list={preferredday} />
-				<Selectlist name="format" label="Course Format" list={courseformat} />
-			</div>
-		</fieldset>
-		<Button type="submit" class="w-full text-white">Submit</Button>
+		</div>
+		<Button type="submit" class="w-full text-white md:w-fit">Submit</Button>
 	</form>
 	<div class="flex flex-col gap-2">
 		<p>

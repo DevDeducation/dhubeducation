@@ -80,7 +80,7 @@
 	<meta property="twitter:image" content={ogimage} />
 </svelte:head>
 
-<section class="bg-body-darker dark:bg-dark-900">
+<section class="row">
 	<div class="md:acenter">
 		{#await utils.getList(Constants.HOMEPAGESLIDERS)}
 			<div
@@ -93,8 +93,9 @@
 		{/await}
 	</div>
 </section>
+
 <!-- global scale section -->
-<section class="bg-body-darker dark:dark:bg-dark-900 row">
+<section class="row bg-body-darker dark:dark:bg-dark-900">
 	<div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center acenter place-items-center">
 		{#each globalscales as options, i}
 			<Globalscalecard {options} />
@@ -179,7 +180,7 @@
 </section>
 
 <!-- courses section -->
-<section aria-label="courses container" class="row" id="courses">
+<section aria-label="courses" class="row bg-body-darker dark:dark:bg-dark-900" id="courses">
 	<div class="acenter flex flex-col gap-6 items-center text-center">
 		<div>
 			<h2 aria-label="courses title" class="text-xl font-semibold uppercase title">
@@ -189,7 +190,7 @@
 		</div>
 		<div class="card-grid-3 text-center">
 			{#await utils.getList(Collection.COURSES)}
-				{#each [1, 2, 3, 4] as _, i}
+				{#each [1, 2, 3] as _, i}
 					<SkeletonServicecard />
 				{/each}
 			{:then value}
@@ -211,7 +212,7 @@
 </section>
 
 <!-- school map section -->
-<section aria-label="map" class="row bg-body-darker dark:dark:bg-dark-900">
+<section aria-label="map" class="row">
 	<div class="acenter flex flex-col gap-2">
 		<!-- <HomepageMap schools={allSchools} client:only /> -->
 
@@ -234,7 +235,7 @@
 </section>
 
 <!-- services section -->
-<section aria-label="services container" class="row" id="services">
+<section aria-label="services" class="row bg-body-darker dark:dark:bg-dark-900" id="services">
 	<div class="acenter flex flex-col gap-6 items-center text-center">
 		<div>
 			<h2 aria-label="services title" class="text-xl font-semibold uppercase title">
@@ -266,11 +267,7 @@
 </section>
 
 <!-- affiliates container -->
-<section
-	aria-label="affiliate container"
-	class="row bg-body-darker dark:dark:bg-dark-900"
-	id="affiliate"
->
+<section aria-label="affiliate" class="row" id="affiliate">
 	<div class="acenter flex flex-col gap-6 items-center text-center">
 		<div>
 			<h2 aria-label="blog title" class="text-xl font-semibold uppercase title">
@@ -293,7 +290,7 @@
 </section>
 
 <!-- partners container -->
-<section aria-label="affiliate container" class="row" id="affiliate">
+<section aria-label="affiliate" class="row bg-body-darker dark:dark:bg-dark-900" id="affiliate">
 	<div class="acenter flex flex-col gap-6 items-center text-center">
 		<div>
 			<h2 aria-label="blog title" class="text-xl font-semibold uppercase title">
@@ -363,11 +360,7 @@
 </section>
 
 <!-- blog container -->
-<section
-	aria-label="affiliate container"
-	class="row bg-body-darker dark:dark:bg-dark-900"
-	id="affiliate"
->
+<section aria-label="blog" class="row" id="affiliate">
 	<div class="acenter flex flex-col gap-6 items-center text-center">
 		<div>
 			<h2 aria-label="blog title" class="text-xl font-semibold uppercase title">Blog</h2>
