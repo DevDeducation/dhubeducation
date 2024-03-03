@@ -1,3 +1,5 @@
+import { string } from "zod";
+
 export interface iButton {
   text: string;
   isAnchorLink: boolean;
@@ -67,6 +69,19 @@ export interface iService {
   description: string;
   landscapepic: string;
   squarepic: string;
+  slug: string;
+  body: {
+    type: string;
+    children: Record<string, any>[]
+  }
+  content?: any
+}
+
+export interface iCourse {
+  name: string;
+  title: string;
+  banner: string;
+  caption: string;
   slug: string;
   body: {
     type: string;
@@ -149,6 +164,12 @@ export interface iPartnerLoad {
 export interface iServiceLoad {
   service: iService;
   services: iService[]
+}
+
+
+export interface iCourseLoad {
+  course: iCourse;
+  courses: iCourse[]
 }
 
 export interface iBlogLoad {

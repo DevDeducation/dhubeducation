@@ -80,6 +80,7 @@ export enum REFEREESTATUS {
 }
 
 export enum Collection {
+  COURSES = "courses",
   SERVICES = "services",
   AFFILIATES = "affiliates",
   SUBSCRIBERS = "subscribers",

@@ -27,6 +27,7 @@
 	import SkeletonServicecard from '$lib/components/skeletons/SkeletonServicecard.svelte';
 	import Slides from '$lib/components/slides/Slides.svelte';
 	import ImagePlaceholder from '$lib/components/skeletons/ImagePlaceholder.svelte';
+	import Coursecard from '$lib/components/cards/Coursecard.svelte';
 
 	let slides: iSlide[] = [];
 	let services: iService[] = [];
@@ -177,9 +178,37 @@
 	</div>
 </section>
 
-<a href="/courses" class="py-4 grid grid-cols-1 gap-4 acenter max-w-2xl mx-auto row">
-	<img src="/images/course-banner.webp" class="w-full rounded-lg" alt="course banner"/>
-</a>
+<!-- courses section -->
+<section aria-label="courses container" class="row" id="courses">
+	<div class="acenter flex flex-col gap-6 items-center text-center">
+		<div>
+			<h2 aria-label="courses title" class="text-xl font-semibold uppercase title">
+				our courses
+			</h2>
+			<p>improve your employability and enhance your career prospects.</p>
+		</div>
+		<div class="card-grid-3 text-center">
+			{#await utils.getList(Collection.COURSES)}
+				{#each [1, 2, 3, 4] as _, i}
+					<SkeletonServicecard />
+				{/each}
+			{:then value}
+				{#each value.slice(0,3) as course, i}
+					<Coursecard {course} />
+				{/each}
+			{/await}
+		</div>
+		<Button
+			options={{
+				href: '/courses',
+				text: 'all courses',
+				isAnchorLink: true,
+				padding: 'py-3 px-6',
+				otherclasses: 'text-center'
+			}}
+		/>
+	</div>
+</section>
 
 <!-- school map section -->
 <section aria-label="map" class="row bg-body-darker dark:dark:bg-dark-900">
