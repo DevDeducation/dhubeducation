@@ -1,6 +1,6 @@
 ---
 order: 3
-title: Courses
+title: Register Now
 text: Register Now
 subline: >-
   Our range of courses in finance, management and healthcare  are developed
