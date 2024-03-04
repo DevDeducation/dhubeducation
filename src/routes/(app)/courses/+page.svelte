@@ -41,9 +41,19 @@
 />
 
 {#await utils.getList(Collection.COURSES)}
-	{#each [1, 2, 3] as _, i}
-		<SkeletonServicecard />
-	{/each}
+  <section class="acenter grid grid-cols-1 gap-4 py-4">
+    <Courseform />
+  </section>
+  <div class="acenter flex flex-col gap-4">
+    <h2 aria-label="courses title" class="title text-center text-xl font-semibold uppercase">
+      all courses
+    </h2>
+    <div class="card-grid-3 text-center">
+      {#each [1, 2, 3] as _, i}
+        <SkeletonServicecard />
+      {/each}
+    </div>
+  </div>
 {:then courses}
 <section class="acenter grid grid-cols-1 gap-4 py-4">
 	<Courseform />
@@ -59,20 +69,3 @@
 	</div>
 </div>
 {/await}
-
-<div class="acenter flex flex-col gap-4">
-	<h2 aria-label="courses title" class="title text-center text-xl font-semibold uppercase">
-		all courses
-	</h2>
-	<div class="card-grid-3 text-center">
-		{#await utils.getList(Collection.COURSES)}
-			{#each [1, 2, 3] as _, i}
-				<SkeletonServicecard />
-			{/each}
-		{:then courses}
-			{#each courses as course, i}
-				<Coursecard {course} />
-			{/each}
-		{/await}
-	</div>
-</div>
