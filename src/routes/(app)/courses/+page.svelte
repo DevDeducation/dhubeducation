@@ -52,8 +52,8 @@
       {#each [1, 2, 3] as _, i}
         <SkeletonServicecard />
       {/each}
-    {:then value}
-      {#each value.slice(0,3) as course, i}
+    {:then courses}
+      {#each courses as course, i}
         <Coursecard {course} />
       {/each}
     {/await}
