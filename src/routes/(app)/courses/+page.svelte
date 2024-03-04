@@ -42,7 +42,7 @@
 
 {#await utils.getList(Collection.COURSES)}
   <section class="acenter grid grid-cols-1 gap-4 py-4">
-    <Courseform />
+    <Courseform courses={[]} />
   </section>
   <div class="acenter flex flex-col gap-4">
     <h2 aria-label="courses title" class="title text-center text-xl font-semibold uppercase">
@@ -56,7 +56,7 @@
   </div>
 {:then courses}
 <section class="acenter grid grid-cols-1 gap-4 py-4">
-	<Courseform />
+	<Courseform { courses } />
 </section>
 <div class="acenter flex flex-col gap-4">
 	<h2 aria-label="courses title" class="title text-center text-xl font-semibold uppercase">

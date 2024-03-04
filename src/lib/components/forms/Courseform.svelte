@@ -7,6 +7,14 @@
 	import { Button } from '../ui/button';
 	import toast, { Toaster } from 'svelte-french-toast';
 	import { educationlist } from '$lib';
+	import type { iCourse } from '$lib'
+
+	export let courses: iCourse[]
+
+	const courselist = courses.map(course => ({
+		label: course.name,
+		value: course.name
+	}))
 
 	const genderlist = [
 		{ value: 'male', label: 'Male' },
@@ -126,7 +134,7 @@
 					<div class="flex flex-col gap-2">
 						<Selectlist name="day" label="Preferred Day" list={preferredday} />
 						<Selectlist name="format" label="Course Format" list={courseformat} />
-						<Selectlist name="course" label="Course" list={courseformat} />
+						<Selectlist name="course" label="Course" list={courselist} />
 					</div>
 				</fieldset>
 			</div>
