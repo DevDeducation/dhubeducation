@@ -19,7 +19,7 @@
 		class="w-full h-full bg-[hsla(0,0%,0%,0.65)] px-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] flex justify-center text-center items-center flex-col gap-4">
 		<div>
 			<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase">{title}</h1>
-			<p class="md:text-lg">{subline && subline.join(', ')}</p>
+			<p class="md:text-lg max-w-2xl">{subline && subline.join(', ')}</p>
 		</div>
 		{#if cta}
 			<div class="flex w-full justify-center gap-3">

@@ -126,6 +126,7 @@
 					<div class="flex flex-col gap-2">
 						<Selectlist name="day" label="Preferred Day" list={preferredday} />
 						<Selectlist name="format" label="Course Format" list={courseformat} />
+						<Selectlist name="course" label="Course" list={courseformat} />
 					</div>
 				</fieldset>
 			</div>
