@@ -64,7 +64,7 @@
 		enctype="multipart/form-data"
 		class="flex flex-col gap-4 items-center justify-center w-full max-w-5xl mx-auto"
 		use:enhance>
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-4 w-full">
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3 w-full">
 			<fieldset>
 				<legend>Personal Information</legend>
 				<div class="flex flex-col gap-2">
@@ -132,15 +132,10 @@
 					<div class="flex flex-col gap-2">
 						<Selectlist name="day" label="Preferred Day" list={preferredday} />
 						<Selectlist name="format" label="Course Format" list={courseformat} />
+						<Selectlist name="format" label="Course Format" list={courselist} />
 					</div>
 				</fieldset>
 			</div>
-			<fieldset>
-				<legend>Courses</legend>
-				<div class="flex flex-col gap-2">
-					<Radiogroup name="courses" list={courselist} />
-				</div>
-			</fieldset>
 		</div>
 		<Button type="submit" class="w-full text-white md:w-fit">Register</Button>
 	</form>

@@ -20,7 +20,7 @@
   const placeholder = `Select a ${label}`
 </script>
 
-<Select.Root onSelectedChange = {(evt) => onSelectedChange(evt)}>
+<!-- <Select.Root onSelectedChange = {(evt) => onSelectedChange(evt)}>
   <Select.Trigger class={cn("dark:bg-transparent dark:border dark:border-muted", classes)}>
     <Select.Value { placeholder }  />
   </Select.Trigger>
@@ -33,4 +33,12 @@
     </Select.Group>
   </Select.Content>
   <Select.Input { name } on:input={() => console.log("on:input changing inside selectlist.svelte")} />
-</Select.Root>
+</Select.Root> -->
+
+<div class="flex w-full items-center space-x-2">
+	<select class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 !border !border-muted dark:bg-transparent">
+{#each list as { label, value } (label)}
+		<option value={value}>{label}</option>
+{/each}
+</select>
+</div>
