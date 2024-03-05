@@ -55,12 +55,7 @@
 			<Courseform { courses } />
 		</section>
 	</main>
-	<aside class="flex-col gap-4 hidden md:flex">
-		<a href="/courses" class="w-full">
-			<Button class="text-white w-full">
-				Register Now
-			</Button>
-		</a>
+	<aside class="flex-col gap-4 hidden md:flex"> 
 		<h2 class="opacity-50 uppercase">All Services</h2>
 		<div class="grid grid-cols-1 gap-2">
 			{#await loaded.courses}
@@ -74,12 +69,7 @@
 			{/await}
 		</div>
 	</aside>
-	<aside class="flex flex-col gap-4 md:hidden">
-		<a href="/courses" class="w-full">
-			<Button class="text-white w-full">
-				Register Now
-			</Button>
-		</a>
+	<aside class="flex flex-col gap-4 md:hidden"> 
 		<h2 class="opacity-50 uppercase">All Affiliates</h2>
 		<div class="grid grid-cols-1 gap-2">
 			{#await loaded.courses}
