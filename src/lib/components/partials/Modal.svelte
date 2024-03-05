@@ -67,9 +67,9 @@
         <a href="/courses" class="relative w-full h-full">
           <img class="w-full aspect-video" src="" alt="popup"/>
         </a>
-        <Button type="button" class="text-white w-full md:w-fit mx-auto" on:click={handlePopupClick}>
+        <Button type="button" class="text-white w-full md:w-fit mx-auto hidden" on:click={handlePopupClick}>
           Click to Signup
-        </Button>
+        </Button> 
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
