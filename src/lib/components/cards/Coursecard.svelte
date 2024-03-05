@@ -25,7 +25,7 @@ class="flex flex-col bg-white dark:bg-dark-800 rounded-lg overflow-hidden shadow
 		<p class="two-lines">{course.caption}</p>
 		<div aria-label="details" class="flex flex-col gap-2">
 			<hr class="dark:opacity-30" />
-			<Arrowlink title="learn more" />
+			<Arrowlink title="apply now" />
 		</div>
 	</div>
 </div>

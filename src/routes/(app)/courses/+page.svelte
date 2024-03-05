@@ -41,13 +41,7 @@
 />
 
 {#await utils.getList(Collection.COURSES)}
-  <section class="acenter grid grid-cols-1 gap-4 py-4">
-    <Courseform courses={[]} />
-  </section>
   <div class="acenter flex flex-col gap-4">
-    <h2 aria-label="courses title" class="title text-center text-xl font-semibold uppercase">
-      all courses
-    </h2>
     <div class="card-grid-3 text-center">
       {#each [1, 2, 3] as _, i}
         <SkeletonServicecard />
@@ -55,13 +49,7 @@
     </div>
   </div>
 {:then courses}
-<section class="acenter grid grid-cols-1 gap-4 py-4">
-	<Courseform { courses } />
-</section>
 <div class="acenter flex flex-col gap-4">
-	<h2 aria-label="courses title" class="title text-center text-xl font-semibold uppercase">
-		all courses
-	</h2>
 	<div class="card-grid-3 text-center">
     {#each courses as course, i}
       <Coursecard {course} />

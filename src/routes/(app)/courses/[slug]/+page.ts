@@ -1,4 +1,5 @@
-import { utils, type iService, type iCourse } from "$lib";
+import { utils, type iCourse } from "$lib";
+import type { Actions } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
@@ -38,3 +39,14 @@ export const load: PageLoad = async ({ params }) => {
     course
   };
 };
+
+// export const actions: Actions = {
+//   default: async() => {
+//     return {
+//       status: 200,
+//       body: {
+//         message: "Hello World"
+//       }
+//     };
+//   }
+// };

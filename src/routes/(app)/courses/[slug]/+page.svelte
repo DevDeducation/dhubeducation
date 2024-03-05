@@ -2,15 +2,17 @@
 	import type { iCourse } from '$lib';
 	import type { iCourseLoad } from '$lib/interfaces/index.ts';
 	import { getDescription, getOgImage, type iService, type iServiceLoad } from '$lib';
-	import Servicecard from '$lib/components/cards/Servicecard.svelte';
 	import SkeletonServicecard from '$lib/components/skeletons/SkeletonServicecard.svelte'; 
 	import type { PageLoad } from './$types';
 	import { Button } from '$lib/components/ui/button';
+	import Courseform from '$lib/components/forms/Courseform.svelte';
 
 	export let data: PageLoad;
 
 	$: loaded = data as unknown as iCourseLoad;
 	$: course = loaded.course as iCourse;
+	$: courses = loaded.courses as iCourse[]
+
 	
 	$: title = `${course.name} | DHUB Education`
 	$: description = getDescription(course.caption)
@@ -34,9 +36,9 @@
 
 <div class="acenter grid grid-cols-1 md:grid-cols-[1fr_320px] gap-4">
 	<main class="flex flex-col gap-4">
-		<div class="flex flex-col gap-2">
+		<div class="flex flex-col">
+			<small>{course.title}</small>
 			<h1 class="title">{course.name}</h1>
-			<p>{course.caption}</p>
 		</div>
 		<img class="md:hidden w-full aspect-video" src={course.banner} alt={course.name} />
 		<div class="flex flex-col gap-4">
@@ -49,6 +51,9 @@
 				<svelte:component this={course.content} />
 			</div>
 		</div>
+		<section class="acenter grid grid-cols-1 gap-4 py-4">
+			<Courseform { courses } />
+		</section>
 	</main>
 	<aside class="flex-col gap-4 hidden md:flex">
 		<a href="/courses" class="w-full">

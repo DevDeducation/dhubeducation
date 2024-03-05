@@ -52,7 +52,7 @@
 		"@clerk/clerk-js": "^4.70.0",
 		"@internationalized/date": "^3.5.2",
 		"@vite-pwa/sveltekit": "^0.4.0",
-		"bits-ui": "^0.18.1",
+		"bits-ui": "^0.18.4",
 		"clerk-sveltekit": "^0.4.1",
 		"clsx": "^2.1.0",
 		"country-flag-icons": "^1.5.9",
