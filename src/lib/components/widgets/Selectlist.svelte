@@ -18,6 +18,7 @@
   }
 
   const placeholder = `Select a ${label}`
+  const defaultClasses = "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 !border !border-muted dark:bg-transparent"
 </script>
 
 <!-- <Select.Root onSelectedChange = {(evt) => onSelectedChange(evt)}>
@@ -36,7 +37,7 @@
 </Select.Root> -->
 
 <div class="flex w-full items-center space-x-2">
-	<select class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 !border !border-muted dark:bg-transparent">
+	<select { name } class={cn(defaultClasses, classes)}>
 {#each list as { label, value } (label)}
 		<option value={value}>{label}</option>
 {/each}
