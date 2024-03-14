@@ -64,12 +64,12 @@
       </audio>
       <div class="w-full img flex flex-col gap-2" id="bannerPopup">
         <Followuslinks />
-        <a href="/affiliate-program" class="relative w-full h-full">
+        <a href="#" class="relative w-full h-full">
           <img class="w-full aspect-video" src="" alt="popup"/>
         </a>
-        <Button type="button" class="text-white w-full md:w-fit mx-auto" on:click={handlePopupClick}>
+        <!-- <Button type="button" class="text-white w-full md:w-fit mx-auto" on:click={handlePopupClick}>
           Click to Signup
-        </Button> 
+        </Button>  -->
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
