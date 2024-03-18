@@ -84,6 +84,7 @@ export enum Collection {
   SERVICES = "services",
   AFFILIATES = "affiliates",
   SUBSCRIBERS = "subscribers",
+  REGISTRATION = "registration",
   FINANCE = "finance",
   REFEREES = "referees",
   SLIDES = "slides",

@@ -6,6 +6,7 @@
 	import { handleClick } from "$lib/utils/index";
 	import CloseBtn from "../buttons/CloseBtn.svelte";
 	import Followuslinks from "./Followuslinks.svelte";
+	import RegistrationForm from '../forms/RegistrationForm.svelte';
 
   let email: string = ""
   let nlFormRef: HTMLFormElement
@@ -67,9 +68,7 @@
         <a href="#" class="relative w-full h-full">
           <img class="w-full aspect-video" src="" alt="popup"/>
         </a>
-        <!-- <Button type="button" class="text-white w-full md:w-fit mx-auto" on:click={handlePopupClick}>
-          Click to Signup
-        </Button>  -->
+        <RegistrationForm />
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />

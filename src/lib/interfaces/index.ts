@@ -294,6 +294,12 @@ export interface iStatusColor {
   color: string;
 }
 
+export interface iStatus {
+  message: string;
+  status: TStatus;
+  data: Record<string, any>;
+}
+
 type ImgProps = {
 	src: string;
 	w: number;

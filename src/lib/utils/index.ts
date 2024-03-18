@@ -204,8 +204,6 @@ export class Utils {
 
     const media = JSON.parse(mediaStr) as iMedia
 
-    console.trace(media)
-
     if (modalEl.classList.contains(Classes.HIDDEN)) {
       if (!this.hasShownPopup()) {
         this.showMedia(media).playMedia(media, name)
