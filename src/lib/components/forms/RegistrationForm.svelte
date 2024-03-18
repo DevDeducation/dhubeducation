@@ -62,7 +62,7 @@
 			class="!border !border-muted dark:bg-transparent"
 			id="phoneNumber"
 			required
-			placeholder="Phone Number (e.g +1 832 310 8276)"
+			placeholder="Phone Number (e.g 1 832 310 8276)"
 		/>
 	</div>
 	<Button type="submit" class="text-white">Register</Button>
