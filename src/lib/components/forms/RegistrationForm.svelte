@@ -38,7 +38,7 @@
   bind:this={formRef}
   on:submit={handleSubmit}>
 	<h1>Fill the form below to register</h1>
-	<div class="flex w-full flex-col gap-4 md:flex-row">
+	<div class="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
 		<input
 			type="text"
 			name="name"
@@ -47,6 +47,22 @@
 			required
 			value="Virtual Fair 2024"
 			placeholder="Name"
+		/>
+		<Input
+			type="text"
+			name="fullname"
+			class="!border !border-muted dark:bg-transparent"
+			id="fullname"
+			required
+			placeholder="Full name"
+		/>
+		<Input
+			type="text"
+			name="country"
+			class="!border !border-muted dark:bg-transparent"
+			id="country"
+			required
+			placeholder="Country"
 		/>
 		<Input
 			type="text"
