@@ -78,7 +78,7 @@
 				{/each}
 			{:then value}
 				{#each value as item, i}
-				<a href={`/courses/${course.slug}`}>{item.name}</a>
+				<a href={`/courses/${item.slug}`}>{item.name}</a>
 				{/each}
 			{/await}
 		</div>
