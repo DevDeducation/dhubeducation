@@ -78,8 +78,11 @@
 			class="!border !border-muted dark:bg-transparent"
 			id="phoneNumber"
 			required
-			placeholder="Phone Number (e.g 1 832 310 8276)"
+			pattern="^\+?(\d{1,3})?[-. ]?\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$"
+			title="Please enter a valid phone number"
+			placeholder="Phone Number (e.g +1 (123) 456-7890)"
 		/>
+
 	</div>
 	<Button type="submit" class="text-white">Register</Button>
 </form>
