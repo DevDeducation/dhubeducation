@@ -78,9 +78,8 @@
 			class="!border !border-muted dark:bg-transparent"
 			id="phoneNumber"
 			required
-			pattern="^\+?(\d{1,3})?[-. ]?\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$"
 			title="Please enter a valid phone number"
-			placeholder="Phone Number (e.g +1 (123) 456-7890)"
+			placeholder="Phone Number (e.g 832 310 8276)"
 		/>
 
 	</div>
