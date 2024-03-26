@@ -65,7 +65,7 @@
 			placeholder="Country"
 		/>
 		<Input
-			type="text"
+			type="email"
 			name="email"
 			class="!border !border-muted dark:bg-transparent"
 			id="email"
