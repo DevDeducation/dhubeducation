@@ -67,9 +67,9 @@
 						href="/finance">Finance</a
 					>
 				{/if}
-				<Button class="text-white">
+				<!-- <Button class="text-white">
 					<a href="/enquiry">Enquiry</a>	
-				</Button>
+				</Button> -->
 			</nav>
 			<div>
 				<div class="flex items-center gap-2">
