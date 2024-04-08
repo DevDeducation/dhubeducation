@@ -10,7 +10,6 @@
 	import { ModeWatcher } from "mode-watcher";
 	import { Toaster } from 'svelte-french-toast';
 
-
 	let popupBtnRef: HTMLButtonElement
 	
 	$: popupBtnRef && popupBtnRef.click()
@@ -19,7 +18,7 @@
 <div class="bg-body dark:bg-dark-950 text-font dark:text-dark-100 overflow-hidden"> 
 	<Toaster />
 	<ModeWatcher />
-	<SocialMediaBtns />
+	<!-- <SocialMediaBtns /> -->
 	<Header />
 	<Alert />
 	<main class="transition-transform duration-200 ease-in-out overflow-hidden flex flex-col">

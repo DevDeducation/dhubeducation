@@ -42,11 +42,6 @@
 						href="/">Home</a
 					>
 					<a
-						aria-label="about"
-						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
-						href="/about-us">About</a
-					>
-					<a
 						aria-label="services"
 						class="font-medium opacity-80 hover:opacity-100 active:opacity-100"
 						href="/services">Services</a
