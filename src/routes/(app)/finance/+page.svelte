@@ -57,6 +57,5 @@ options={{
 		penalties. This feature can also help reduce the administrative burden on the institution. We
 		offer a 24/7 payment service.
 	</p>
-	<Button href="https://ideal4finance.com/business-lending">Learn more</Button>
 
 </div>
