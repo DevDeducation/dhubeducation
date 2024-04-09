@@ -13,19 +13,3 @@ export const load: PageServerLoad = async () => {
 
   return { slider };
 };
-
-const finance: Action = async ({ request }) => {
-  const formData = await request.formData()
-  const entries = Object.fromEntries(formData.entries())
-  const response = await setDocumentWithMerge({
-    collectionId: Collection.FINANCE,
-    docId: entries.email as string,
-    data: entries
-  })
-  response.message = "Successfully submitted request!!!"
-  return { ...response }
-}
-
-export const actions: Actions = {
-  finance
-} satisfies Actions
