@@ -47,7 +47,7 @@ options={{
 }}
 />
 
-<div class="acenter p-4">
+<div class="acenter p-4 max-w-2xl flex flex-col gap-4 items-center">
 	<p
 		class="mx-auto border-l-4 rounded-lg border-primary dark:border-white shadow-custom bg-white dark:bg-dark-800 p-4">
 		With different challenges facing international students, such as paying tuition fees deposits or
