@@ -91,7 +91,7 @@ options={{
 		At DHub Education, we're dedicated to turning dreams into reality through education. With our flexible finance options, everyone has the opportunity to pursue their studies. Whether you qualify for student finance or need a loan, we're here to support you every step of the way. Don't let financial constraints hold you back from achieving your educational goals. Join us at DHub Education and let's make your dreams come to life together
 	</p>
 
-	<p>
+	<p class="mt-4">
 		To be eligible for student finance in the UK, you typically need to meet the following requirements:
 	</p>
 	
