@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import type { PageServerData } from '../$types';
 	import { Button } from '$lib/components/ui/button';
+	import Finance from '$lib/components/forms/Finance.svelte';
 	
 	export let data: PageServerData;
 
@@ -103,4 +104,5 @@ options={{
 			</div>
 		{/each}
 	</div>
+	<Finance />
 </div>
