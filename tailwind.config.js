@@ -106,7 +106,8 @@ const config = {
 				'3xs': "8px"
 			},
 			boxShadow: {
-				"custom": "0 2px 5px 0 rgba(0,0,0,0.1)"
+				"custom": "0 2px 5px 0 rgba(0,0,0,0.1)",
+				"border": "rgb(51, 51, 51) 0px 0px 0px 1px"
 			},
 		}
 	},
