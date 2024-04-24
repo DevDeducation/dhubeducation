@@ -11,8 +11,8 @@
 	$: heroload = data as unknown as iHeroLoad;
 	$: slider = heroload.slider;
 
-	$: title = 'Course | DHUB Education';
-	$: description = getDescription('Travel Agent Operations and Management Course');
+	$: title = 'Virtual Fair | DHUB Education';
+	$: description = getDescription('Study Abroad Virtual Fair');
 	$: ogimage = getOgImage('https://assets.tina.io/c33a0372-b234-4d33-889c-554ce83b13ff/popup/virtual-fair_2.webp');
 </script>
 
