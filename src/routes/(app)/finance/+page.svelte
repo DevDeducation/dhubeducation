@@ -106,7 +106,7 @@ options={{
 	</div>
 	<div class="flex flex-col gap-2 items-center">
 		<p>To learn more </p>
-		<Button href="/enquire" variant="outline" class="dark:bg-transparent">Click here</Button>
+		<Button href="/enquire" variant="outline" class="dark:bg-transparent border-primary text-primary dark:border-inherit dark:text-white">Click here</Button>
 	</div>
 	<!-- <Finance /> -->
 </div>
