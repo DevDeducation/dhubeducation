@@ -96,13 +96,17 @@ options={{
 		To be eligible for student finance in the UK, you typically need to meet the following requirements:
 	</p>
 	
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 		{#each documents as { title, content } (title)}
-			<div class="p-6 rounded-lg shadow-border bg-white dark:bg-transparent flex flex-col gap-1">
+			<div class="p-6 rounded-lg bg-white dark:bg-transparent flex flex-col gap-1">
 				<h4 class="font-medium">{title}</h4>
 				<p class="text-muted-foreground">{content}</p>
 			</div>
 		{/each}
 	</div>
-	<Finance />
+	<div class="flex flex-col gap-2 items-center">
+		<p>To learn more </p>
+		<Button href="/enquire" variant="outline">Click here</Button>
+	</div>
+	<!-- <Finance /> -->
 </div>
