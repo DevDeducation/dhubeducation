@@ -9,6 +9,7 @@
 	import { handleClick, popup } from '$lib';
 	import { ModeWatcher } from "mode-watcher";
 	import { Toaster } from 'svelte-french-toast';
+	import Countdown from '$lib/components/widgets/Countdown.svelte';
 
 	let popupBtnRef: HTMLButtonElement
 	
@@ -19,6 +20,7 @@
 	<Toaster />
 	<ModeWatcher />
 	<!-- <SocialMediaBtns /> -->
+	<Countdown />
 	<Header />
 	<Alert />
 	<main class="transition-transform duration-200 ease-in-out overflow-hidden flex flex-col">

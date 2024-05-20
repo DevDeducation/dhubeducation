@@ -1,4 +1,4 @@
-import type { iAlert } from "$lib/interfaces";
+import type { iAlert, iTime } from "$lib/interfaces";
 import { Utils } from "$lib/utils/index";
 
 import { writable } from "svelte/store";
@@ -10,6 +10,8 @@ export const alertstore = writable<iAlert>({
   message: "Welcome",
   active: false
 })
+
+export const clockstore = writable<iTime | undefined>()
 
 export const pagestore = writable<string>("home")
 

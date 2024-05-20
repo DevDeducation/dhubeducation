@@ -339,3 +339,11 @@ export interface iValueLabel {
   label: string;
   disabled?: boolean
 }
+
+export interface iTime {
+  t: number;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
