@@ -46,9 +46,9 @@
   <h2>Virtual Fair starts in:</h2>
   <div class="flex items-center gap-2">
     {#each list as { label, num } (label)}
-      <div class="flex items-baseline gap-1">
+      <div class="flex items-baseline gap-[2px] text-primary font-semibold dark:text-white">
         <p class="text-2xl">{num}</p>
-        <span class="text-xs">{label}</span>
+        <span class="text-xs dark:text-muted-foreground">{label}</span>
       </div>
     {/each} 
   </div>
