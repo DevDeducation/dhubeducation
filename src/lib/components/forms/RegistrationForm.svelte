@@ -40,7 +40,7 @@
   bind:this={formRef}
   on:submit={handleSubmit}>
 	<h1>Fill the form below to register</h1>
-	<div class="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
+	<div class="grid grid-cols-1 md:grid-cols-4 w-full gap-4">
 		<input
 			type="text"
 			name="name"
