@@ -4,6 +4,7 @@
 	import toast from "svelte-french-toast";
 	import { Button } from "../ui/button";
   import { Input } from "../ui/input";
+	import Countdown from "../widgets/Countdown.svelte";
 
   
   let formRef: HTMLFormElement
@@ -33,6 +34,7 @@
   }
 </script>
 
+<Countdown />
 <form
 	class="flex flex-col items-center gap-4 overflow-hidden rounded-lg shadow-custom"
   bind:this={formRef}

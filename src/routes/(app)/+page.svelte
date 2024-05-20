@@ -80,12 +80,11 @@
 	<meta property="twitter:image" content={ogimage} />
 </svelte:head>
 
-<section class="row">
+<section>
 	<div class="md:acenter">
 		{#await utils.getList(Constants.HOMEPAGESLIDERS)}
 			<div
-				class="w-full h-[300px] md:h-[400px] flex justify-center items-center bg-white/70 dark:bg-dark-700/70"
-			>
+				class="w-full h-[300px] md:h-[400px] flex justify-center items-center bg-white/70 dark:bg-dark-700/70">
 				<ImagePlaceholder classes="w-32 h-32" />
 			</div>
 		{:then sliders}
@@ -95,7 +94,7 @@
 </section>
 
 <!-- global scale section -->
-<section class="row bg-body-darker dark:dark:bg-dark-900">
+<section class="bg-body-darker dark:dark:bg-dark-900">
 	<div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center acenter place-items-center">
 		{#each globalscales as options, i}
 			<Globalscalecard {options} />

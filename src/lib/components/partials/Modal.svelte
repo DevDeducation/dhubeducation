@@ -45,7 +45,7 @@
 </script>
 <section id="modal" aria-label="modal" class="fixed w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[32] origin-center flex hidden justify-center items-center" data-key="modal" bind:this={modalRef}>
   <button on:click={handleClick} data-name="modal overlay" class="opacity-75 bg-black absolute w-full h-full"></button>
-  <div data-name="modal content" class="absolute bg-white dark:bg-dark-900 text-current p-4 rounded-lg flex flex-col gap-4 origin-center w-[calc(100%-32px)] max-w-xl md:max-w-2xl">
+  <div data-name="modal content" class="absolute bg-white dark:bg-dark-900 text-current p-4 rounded-lg flex flex-col gap-4 origin-center w-[calc(100%-16px)] max-w-xl md:max-w-2xl h-[480px] overflow-y-auto md:h-auto">
     <div class="flex justify-between items-center">
       <h2 data-name="modal-header" class="font-semibold">
         Header
@@ -65,7 +65,7 @@
       </audio>
       <div class="w-full img flex flex-col gap-2" id="bannerPopup">
         <Followuslinks />
-        <a href="#" class="relative w-full h-full">
+        <a href="/#" class="relative w-full h-full">
           <img class="w-full aspect-video" src="" alt="popup"/>
         </a>
         <RegistrationForm />

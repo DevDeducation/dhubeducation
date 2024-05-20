@@ -21,11 +21,11 @@
     },
     {
       num: minutes,
-      label: 'minutes'
+      label: 'mins'
     },
     {
       num: seconds,
-      label: 'seconds'
+      label: 'secs'
     }
   ]
 
@@ -40,14 +40,14 @@
   }
 </style>
 
-<div class={cn("sticky left-0 top-0 z-[1] flex flex-col md:flex-row w-full items-center justify-center gap-2 p-2", hidden ? "hidden" : "")}>
+<a href="/registration" class={cn("flex flex-col md:flex-row w-full items-center justify-center md:items-baseline md:gap-2 p-2 bg-primary text-white", hidden ? "hidden" : "")}>
   <h2>Virtual Fair starts in:</h2>
   <div class="flex items-center gap-2">
     {#each list as { label, num } (label)}
-      <div class="flex items-baseline gap-[2px] text-primary font-semibold dark:text-white">
-        <p class="text-2xl">{num}</p>
-        <span class="text-xs dark:text-muted-foreground">{label}</span>
+      <div class="flex items-baseline gap-[2px] font-semibol">
+        <p class="text-2xl font-bold">{num}</p>
+        <span class="text-xs">{label}</span>
       </div>
     {/each} 
   </div>
-</div>
+</a>

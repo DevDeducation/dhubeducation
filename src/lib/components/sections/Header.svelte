@@ -6,6 +6,7 @@
 	import { Button } from '../ui/button';
 	import Darkmode from '../buttons/Darkmode.svelte';
 	import Logo from '../icons/Logo.svelte';
+	import Countdown from '../widgets/Countdown.svelte';
 
 	export let classes: string = '';
 	export let center: boolean = true;
@@ -22,6 +23,7 @@
 </script>
 
 <section class={className}>
+	<Countdown />
 	<div class={innerDivClass}>
 		{#if showLogo}
 			<Logo />
