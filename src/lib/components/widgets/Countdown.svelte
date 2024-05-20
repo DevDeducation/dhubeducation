@@ -4,8 +4,6 @@
   import { onMount } from 'svelte';
 	import { cn } from '$lib/utils';
 
-  $: console.log({ clockstore: $clockstore });
-
   $: days = $clockstore?.days
   $: hours = $clockstore?.hours
   $: minutes = $clockstore?.minutes
