@@ -226,7 +226,7 @@ export class Utils {
     modalEl.classList.remove(Classes.HIDDEN) 
     
     modalHeaderEl.textContent = media.header
-    modalFooterEl.textContent = media.footer
+    // modalFooterEl.textContent = media.footer
     return this
   }
 
@@ -234,7 +234,7 @@ export class Utils {
     const { modalEl, modalHeaderEl, modalFooterEl } = this.modal()
     modalEl.classList.add(Classes.HIDDEN)
     modalHeaderEl.textContent = ""
-    modalFooterEl.textContent = ""
+    // modalFooterEl.textContent = ""
     return this
   }
 

@@ -7,6 +7,7 @@
 	import CloseBtn from "../buttons/CloseBtn.svelte";
 	import Followuslinks from "./Followuslinks.svelte";
 	import RegistrationForm from '../forms/RegistrationForm.svelte';
+	import Countdown from '../widgets/Countdown.svelte';
 
   let email: string = ""
   let nlFormRef: HTMLFormElement
@@ -45,7 +46,7 @@
 </script>
 <section id="modal" aria-label="modal" class="fixed w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[32] origin-center flex hidden justify-center items-center" data-key="modal" bind:this={modalRef}>
   <button on:click={handleClick} data-name="modal overlay" class="opacity-75 bg-black absolute w-full h-full"></button>
-  <div data-name="modal content" class="absolute bg-white dark:bg-dark-900 text-current p-4 rounded-lg flex flex-col gap-4 origin-center w-[calc(100%-16px)] max-w-xl md:max-w-2xl h-[480px] overflow-y-auto md:h-auto">
+  <div data-name="modal content" class="absolute bg-white dark:bg-dark-900 text-current p-4 rounded-lg gap-4 origin-center w-[calc(100%-16px)] max-w-xl md:max-w-4xl h-[480px] overflow-y-auto md:h-fit flex flex-col">
     <div class="flex justify-between items-center">
       <h2 data-name="modal-header" class="font-semibold">
         Header
@@ -64,11 +65,14 @@
         Your browser does not support the audio element. 
       </audio>
       <div class="w-full img flex flex-col gap-2" id="bannerPopup">
-        <Followuslinks />
-        <a href="/#" class="relative w-full h-full">
-          <img class="w-full aspect-video" src="" alt="popup"/>
-        </a>
-        <RegistrationForm />
+        <!-- <Followuslinks /> -->
+        <Countdown />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <a href="/#" class="relative w-full h-full">
+            <img class="w-full aspect-video" src="" alt="popup"/>
+          </a>
+          <RegistrationForm />
+        </div>
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
@@ -91,8 +95,8 @@
         </form>
       </div>
     </div>
-    <div data-name="modal-footer">
+    <!-- <div data-name="modal-footer">
       Footer
-    </div>
+    </div> -->
   </div>
 </section>
