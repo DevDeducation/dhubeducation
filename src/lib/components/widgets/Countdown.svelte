@@ -13,19 +13,19 @@
   $: list = [
     {
       num: days,
-      label: 'days'
+      label: Number(days) < 2 ? 'day' : 'days'
     },
     {
       num: hours,
-      label: 'hours'
+      label: Number(hours) < 2 ? 'hour' : 'hours'
     },
     {
       num: minutes,
-      label: 'mins'
+      label: Number(minutes) < 2 ? 'min' : 'minutes'
     },
     {
       num: seconds,
-      label: 'secs'
+      label: Number(seconds) < 2 ? 'sec' : 'secs'
     }
   ]
 
