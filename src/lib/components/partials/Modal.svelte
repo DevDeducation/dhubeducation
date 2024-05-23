@@ -68,11 +68,31 @@
         <!-- <Followuslinks /> -->
         <Countdown />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <a href="https://us06web.zoom.us/j/85423523567?pwd=MlqqSV3b6gjulr3iQ0g02TmU7qEzbg.1" class="relative w-full h-full">
+            <img class="w-full aspect-video" src="" alt="popup"/>
+          </a>
+          <div class="flex flex-col gap-1">
+            <div>
+              <h2 class="font-semibold text-white">Thursday May 23, 2024</h2>
+              <p class="text-muted-foreground">Time: 12pm - 4pm WAT</p>
+              <p class="text-muted-foreground">Meeting ID: 854 2352 3567</p>
+              <p class="text-muted-foreground">Passcode: 979940</p>
+            </div>
+            <div>
+              <h2 class="font-semibold text-white">Friday May 24, 2024</h2>
+              <p class="text-muted-foreground">Time: 5pm - 8pm WAT</p>
+              <p class="text-muted-foreground">Meeting ID: 854 2352 3567</p>
+              <p class="text-muted-foreground">Passcode: 979940</p>
+            </div>
+            <Button href="https://us06web.zoom.us/j/85423523567?pwd=MlqqSV3b6gjulr3iQ0g02TmU7qEzbg.1" class="text-white">JOIN NOW</Button>
+          </div>
+        </div>
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
           <a href="/#" class="relative w-full h-full">
             <img class="w-full aspect-video" src="" alt="popup"/>
           </a>
           <RegistrationForm />
-        </div>
+        </div> -->
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
