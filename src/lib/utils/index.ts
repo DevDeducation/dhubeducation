@@ -253,7 +253,7 @@ export class Utils {
     modalIframeEl.style.display = "block"
     modalAudioEl.style.display = "none"
     modalImageEl.style.display = "none"
-    modalNewsletterEl.style.display = "none"
+    // modalNewsletterEl.style.display = "none"
   }
 
   playNewsletter(media: iMedia) {
@@ -270,7 +270,7 @@ export class Utils {
     imageEl.src = media.src
     modalIframeEl.style.display = "none"
     modalAudioEl.style.display = "none"
-    modalNewsletterEl.style.display = "none"
+    // modalNewsletterEl.style.display = "none"
     modalImageEl.style.display = "flex"
   }
 
@@ -282,7 +282,7 @@ export class Utils {
 
     modalIframeEl.style.display = "none"
     modalImageEl.style.display = "none"
-    modalNewsletterEl.style.display = "none"
+    // modalNewsletterEl.style.display = "none"
     modalAudioEl.style.display = "block"
   }
   sentenceCase(word: string) {

@@ -46,7 +46,7 @@
 </script>
 <section id="modal" aria-label="modal" class="fixed w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[32] origin-center flex hidden justify-center items-center" data-key="modal" bind:this={modalRef}>
   <button on:click={handleClick} data-name="modal overlay" class="opacity-75 bg-black absolute w-full h-full"></button>
-  <div data-name="modal content" class="absolute bg-white dark:bg-dark-900 text-current p-4 rounded-lg gap-4 origin-center w-[calc(100%-16px)] max-w-xl md:max-w-4xl h-[480px] overflow-y-auto md:h-fit flex flex-col">
+  <div data-name="modal content" class="absolute bg-white dark:bg-dark-900 text-current p-4 rounded-lg gap-4 origin-center w-[calc(100%-16px)] max-w-xl md:max-w-4xl flex flex-col">
     <div class="flex justify-between items-center">
       <h2 data-name="modal-header" class="font-semibold">
         Header
@@ -59,8 +59,8 @@
         allowfullscreen
         title="latest message"
         loading="lazy"
-        class="w-full rounded-sm4 aspect-video" src="" id="videoPopup"></iframe>
-      <audio class="w-full" controls data-title="" data-audiourl="" id="audioPopup">
+        class="w-full rounded-sm4 aspect-video hidden" src="" id="videoPopup"></iframe>
+      <audio class="w-full hidden" controls data-title="" data-audiourl="" id="audioPopup">
         <source src="" type="audio/mpeg">
         Your browser does not support the audio element. 
       </audio>
@@ -87,15 +87,15 @@
             <Button href="https://us06web.zoom.us/j/85423523567?pwd=MlqqSV3b6gjulr3iQ0g02TmU7qEzbg.1" class="text-white">JOIN NOW</Button>
           </div>
         </div> -->
-        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
           <a href="/#" class="relative w-full h-full">
             <img class="w-full aspect-video" src="" alt="popup"/>
           </a>
-          <RegistrationForm />
-        </div> -->
-        <a href="/#" class="relative w-full h-full">
+          <!-- <RegistrationForm /> -->
+        </div>
+        <!-- <a href="/#" class="relative w-full h-full">
           <img class="w-full aspect-video" src="" alt="popup"/>
-        </a>
+        </a> -->
       </div>
       <div class="relative flex flex-col gap-4" id="newsletterPopup">
         <img src="/images/newsletter-bg.webp" class="w-full" alt="newsletter" />
