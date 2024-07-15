@@ -44,7 +44,7 @@
 		type="text"
 		name="sortCode"
 		class="!border !border-muted dark:bg-transparent"
-		required
+		
 		bind:value={user.sortCode}
 		placeholder="Sort Code"
 	/>
@@ -52,7 +52,7 @@
 		type="text"
 		name="swiftCode"
 		class="!border !border-muted dark:bg-transparent"
-		required
+		
 		bind:value={user.swiftCode}
 		placeholder="Swift Code"
 	/>

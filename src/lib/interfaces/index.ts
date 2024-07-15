@@ -347,3 +347,10 @@ export interface iTime {
   minutes: number;
   seconds: number;
 }
+
+export interface iReview {
+  name: string;
+  image: string;
+  review: string;
+  rating: string;
+}
