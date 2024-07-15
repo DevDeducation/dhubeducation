@@ -11,8 +11,6 @@
 	$: title = "About Us | DHUB Education"
 	$: description = getDescription(slider.subline)
 	$: ogimage = getOgImage(slider.background)
-
-	
 </script>
 
 <svelte:head>
