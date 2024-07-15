@@ -40,22 +40,22 @@
 		bind:value={user.accountNumber}
 		placeholder="Account Number"
 	/>
-	<Input
+	<!-- <Input
 		type="text"
 		name="sortCode"
 		class="!border !border-muted dark:bg-transparent"
 		
 		bind:value={user.sortCode}
 		placeholder="Sort Code"
-	/>
-	<Input
+	/> -->
+	<!-- <Input
 		type="text"
 		name="swiftCode"
 		class="!border !border-muted dark:bg-transparent"
 		
 		bind:value={user.swiftCode}
 		placeholder="Swift Code"
-	/>
+	/> -->
 </div>
 {:else}
 <div class="flex flex-col gap-4">
