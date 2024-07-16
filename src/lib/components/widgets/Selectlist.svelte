@@ -1,24 +1,27 @@
 <script lang="ts">
-	import { Events } from "$lib";
-  import * as Select from "$lib/components/ui/select"; 
-	import { cn } from "$lib/utils";
-	import type { Selected } from "bits-ui";
-  import { createEventDispatcher } from "svelte";
-	import type { ChangeEvent } from "sveltekit-superforms";
+	import { Events } from '$lib';
+	import * as Select from '$lib/components/ui/select';
+	import { cn } from '$lib/utils';
+	import type { Selected } from 'bits-ui';
+	import { createEventDispatcher } from 'svelte';
+	import type { ChangeEvent } from 'sveltekit-superforms';
 
-  export let name: string = ""
-  export let label: string = ""
-  export let list: { value: string, label: string }[] = []
-  export let classes: string = "" 
+	export let name: string = '';
+	export let label: string = '';
+	export let list: { value: string; label: string }[] = [];
+	export let classes: string = '';
 
-  const dispatch = createEventDispatcher()
+	const dispatch = createEventDispatcher();
 
-  const onSelectedChange = (selected: Selected<unknown> | undefined) => {
-    dispatch(Events.CHANGE, selected)
-  }
+	const onSelectedChange = (evt: Event) => {
+    const target = evt.target as HTMLSelectElement
+    const selected = target.value
+		dispatch(Events.CHANGE, selected);
+	};
 
-  const placeholder = `Select a ${label}`
-  const defaultClasses = "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 !border !border-muted dark:bg-transparent"
+	const placeholder = `Select a ${label}`;
+	const defaultClasses =
+		'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 !border !border-muted dark:bg-transparent';
 </script>
 
 <!-- <Select.Root onSelectedChange = {(evt) => onSelectedChange(evt)}>
@@ -37,9 +40,9 @@
 </Select.Root> -->
 
 <div class="flex w-full items-center space-x-2">
-	<select { name } class={cn(defaultClasses, classes)}>
-{#each list as { label, value } (label)}
-		<option value={value}>{label}</option>
-{/each}
-</select>
+	<select on:change={onSelectedChange} {name} class={cn(defaultClasses, classes)}>
+		{#each list as { label, value } (label)}
+			<option {value}>{label}</option>
+		{/each}
+	</select>
 </div>

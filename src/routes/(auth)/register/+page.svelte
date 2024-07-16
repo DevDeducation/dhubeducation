@@ -149,8 +149,8 @@
 
 	const handleChange = (evt: CustomEvent) => {
 		console.log(evt);
-		const detail = evt.detail as iValueLabel;
-		method = detail.value;
+		const detail = evt.detail;
+		method = detail;
 	};
 
 	const handlePaymentMethod = async (evt: Event) => {

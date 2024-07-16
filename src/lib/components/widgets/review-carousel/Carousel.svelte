@@ -13,9 +13,12 @@
 	import Rating from '../Rating.svelte';
 	import type { iReview } from '$lib/interfaces';
 
+	import "./css/base.css"
+	import "./css/embla.css"
+
 	let className: string = '';
 	export { className as class };
-	export let sliders: iReview[] = []
+	export let reviews: iReview[] = []
 
 	let emblaNode: HTMLElement;
 	let prevBtn: HTMLButtonElement;
@@ -50,19 +53,19 @@
 <div bind:this={emblaNode} class={cn('embla', className)}>
 	<div bind:this={slideViewport} class="embla__viewport">
 		<div class="embla__container !auto-cols-[95%] md:!auto-cols-[40%]">
-			{#each sliders as { image, name, review }, i}
+			{#each reviews as { image, name, review }, i}
 				<Card
-					class="embla__slide flex flex-shrink-0 flex-grow-0 basis-[95%] flex-col items-center justify-center gap-6 bg-white p-4 dark:bg-primary/10 md:basis-[40%]"
+					class="embla__slide flex flex-shrink-0 flex-grow-0 basis-[95%] flex-col items-center justify-center gap-6 bg-white p-4 dark:bg-primary/10 md:basis-[40%] dark:border-none"
 				>
 					<div class="flex flex-col items-center gap-2">
-						<img loading="lazy" src={image} alt={name} class="h-[100px] w-[100px] rounded-full" />
+						<img loading="lazy" src={image} alt={name} class="h-16 w-16 rounded-full" />
 						<h2>
 							{name}
 						</h2>
 						<Rating />
 					</div>
 					<p class="h-[200px] overflow-auto px-4 md:px-6">
-						{review}
+						{@html review}
 					</p>
 				</Card>
 			{/each}

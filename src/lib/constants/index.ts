@@ -203,86 +203,56 @@ export const sectors: iSector[] = [
 export const reviews: iReview[] = [
   {
       "name": "clarence olympio",
-      "image": "",
-      "review": "With Dhub Education, I had a truly wonderful experience. They offered me essential assistance and direction all the way through my journey, from the day I made the decision to study abroad until the day I arrived at my destination. I highly advise anyone thinking about studying abroad to explore Dhub Education. They stand out thanks to their committed crew, meticulous attention to detail, and dedication to the welfare of the pupils. They helped make my dream of studying abroad a reality, and I wouldn't think twice about picking them again.Clarence from Ghana 🇬🇭",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a-/ALV-UjW95vrX4sSrbhM50EtRrA7VWUdOba6UpM3EoRwzbsP-uSELbMw=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "With Dhub Education, I had a truly wonderful experience. They offered me essential assistance and direction all the way through my journey, from the day I made the decision to study abroad until the day I arrived at my destination. I highly advise anyone thinking about studying abroad to explore Dhub Education. They stand out thanks to their committed crew, meticulous attention to detail, and dedication to the welfare of the pupils. They helped make my dream of studying abroad a reality, and I wouldn't think twice about picking them again.Clarence from Ghana 🇬🇭<br/>With Dhub Education, I had a truly wonderful experience. They offered me essential assistance and direction all the way through my journey, from the day I made the decision to study abroad until the day I arrived at my destination. I highly advise anyone thinking about studying abroad to explore Dhub Education. They stand out thanks to their committed crew, meticulous attention to detail, and dedication to the welfare of the pupils. They helped make my dream of studying abroad a reality, and I wouldn't think twice about picking them again.Clarence from Ghana 🇬🇭"
   },
   {
       "name": "Motolani Teibo",
-      "image": "",
-      "review": "My experience with with Dhub Education was amazing ,from the on set , Damilola took up my son's case and she delivered promptly from the school application, up to the visa application. She responded to worrisome question at all time and the reassurance from her was fantastic.The professionalism showed during the visa application was great, and the final results brought happiness to my family.Many thanks .",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocLe3mczX4TJRL1GBccAU4uuhy39gSniG2xsug_5Z5BvqTk4Og=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "My experience with with Dhub Education was amazing ,from the on set , Damilola took up my son's case and she delivered promptly from the school application, up to the visa application. She responded to worrisome question at all time and the reassurance from her was fantastic.The professionalism showed during the visa application was great, and the final results brought happiness to my family.Many thanks .<br/>My experience with with Dhub Education was amazing ,from the on set , Damilola took up my son's case and she delivered promptly from the school application, up to the visa application. She responded to worrisome question at all time and the reassurance from her was fantastic.The professionalism showed during the visa application was great, and the final results brought happiness to my family.Many thanks ."
   },
   {
       "name": "Avuwakoghene Rume",
-      "image": "",
-      "review": "I'd like to thank DHUB education for all the assistance during my MMU application and it was a huge success. Tested and trusted. 100% reliable",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a-/ALV-UjU5jYpCE9L2JCfba3dyrxCoIVsMpAS-AIQlcejFxBdas1gu94XZ=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "I’d like to thank DHUB education for all the assistance during my MMU application and it was a huge success. Tested and trusted. 100% reliable"
   },
   {
       "name": "T'z Mhizta MARCELO",
-      "image": "",
-      "review": "Dhub Education is the best reliable platform to help you gain admission in any university and schools of your choice around the world,I'm currently a product of testimony applying through Dhub Education to gain admission into Middlesex University London.I will always advice everyone of you to choose Dhub Education to secure international students admition to any school around the globe.Regards,@Marcelo",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a-/ALV-UjVDBaD_fNLSSJ_qTy2l4Sv1befyvO_DSyEWQfi0i5YBhFs70bEZ=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "Dhub Education is the best reliable platform to help you gain admission in any university and schools of your choice around the world,I'm currently a product of testimony applying through Dhub Education to gain admission into Middlesex University London.I will always advice everyone of you to choose Dhub Education to secure international students admition to any school around the globe.Regards,@Marcelo<br/>Dhub Education is the best reliable platform to help you gain admission in any university and schools of your choice around the world,I'm currently a product of testimony applying through Dhub Education to gain admission into Middlesex University London.I will always advice everyone of you to choose Dhub Education to secure international students admition to any school around the globe.Regards,@Marcelo"
   },
   {
       "name": "Ekene Obi",
-      "image": "",
-      "review": "Dhub's service is top notch and standard. They have a good agent/client relationship. They are patient and knows there job very well. I recommend their services.",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a-/ALV-UjWebWZWVpd1JKSySggnCgFBkEKgYGoxffVdM-g5HPFZKXNLFM9a=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "Dhub's service is top notch and standard. They have a good agent/client relationship. They are patient and knows there job very well. I recommend their services."
   },
   {
       "name": "Winnie Schola",
-      "image": "",
-      "review": "I had great service and friendly communication with Dhub Education. The are very Compassionate and Understanding. The gave it all to Satisfy Me. The are the Best in United kingdomPositive Communication, Quality, Professionalism, Value",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocIo0Klo2itxQMs-52BRjt9qFw3MBtDrcN_Hi-oQV5cBUUrP7g=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "I had great service and friendly communication with Dhub Education. The are very Compassionate and Understanding. The gave it all to Satisfy Me. The are the Best in United kingdomPositive Communication, Quality, Professionalism, Value"
   },
   {
       "name": "Chinyere OmeniNzewuihe",
-      "image": "",
-      "review": "You are sure to get the best result with Dhub Education. I highly recommend them.",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKmZZv48sRcgIp1TiMyLWDNQUDFrw6P8b3HTW-bzMd1b7Snbg=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "You are sure to get the best result with Dhub Education. I highly recommend them."
   },
   {
       "name": "Gloria Adelaja",
-      "image": "",
-      "review": "The best of all, they really help me throughout the whole process and now I'm in UK",
-      "rating": "5"
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocLjDTKBrleJMn90WBRmkb9g2creOUBZTYhpaF18iPRr9GRYyw=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "The best of all, they really help me throughout the whole process and now I'm in UK"
   },
   {
       "name": "MICHAEL MUKAILA",
-      "image": "",
-      "review": "Thanks for the support and guide I received from you guys. Definitely referring someone.",
-      "rating": "5"
-  },
-  {
-      "name": "Olabisi Bello",
-      "image": "",
-      "review": "",
-      "rating": "5"
-  },
-  {
-      "name": "Okoh Ebube",
-      "image": "",
-      "review": "",
-      "rating": "5"
-  },
-  {
-      "name": "Esther Ita",
-      "image": "",
-      "review": "",
-      "rating": "5"
-  },
-  {
-      "name": "Famose Omoteniola",
-      "image": "",
-      "review": "",
-      "rating": "5"
-  },
-  {
-      "name": "Nothando Sigojwana",
-      "image": "",
-      "review": "",
-      "rating": ""
+      "image": "https://lh3.googleusercontent.com/a-/ALV-UjWaV6AQdqeV6IZmxSRwdWauDXQNOfSRGEQPIka13rrVOCPb374I=s40-c-rp-mo-br100",
+      "rating": "5",
+      "review": "Thanks for the support and guide I received from you guys. Definitely referring someone."
   }
 ]

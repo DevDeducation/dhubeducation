@@ -1,1 +1,48 @@
 - cookie consent: pnpm add vanilla-cookieconsent@v3.0.0
+- when faced with tina graphQL error, just delete the tina-lock.json file from the tina folder and push to github
+
+Reviews
+------
+parent card class: .WMbnJf
+image class: .lDY1rd (src attribute)
+Name class: .TSUbDb
+review class: .review-full-text | span[data-expandable-section] | span.k8MTF > span
+rating: .lTi8oc (aria-label attribute)
+
+const cleanString = (input) => {
+    // Remove new lines
+    let cleaned = input.replace(/\n/g, ' ');
+    
+    // Reduce multiple whitespace to a single space
+    cleaned = cleaned.replace(/\s+/g, ' ');
+
+    return cleaned.trim(); // Trim any leading/trailing whitespace
+}
+
+// Example usage
+const input = "This is a \n\n   test  string\n with  multiple    whitespaces\nand new lines.";
+const output = cleanString(input);
+console.log(output);  // Output: "This is a test string with multiple whitespaces and new lines."
+
+const reviewEls = document.querySelectorAll(".WMbnJf")
+const reviews = Array.from(reviewEls).map(el => {
+  const nameEl = el.querySelector(".TSUbDb")
+  const imageEl = el.querySelector(".lDY1rd")
+  const reviewTxtEl = el.querySelector(".review-full-text")
+  const reviewTxtEl2 = el.querySelector("span[data-expandable-section]")
+  const reviewTxtEl3 = el.querySelector("span.k8MTF > span")
+  const ratingEl = el.querySelector(".lTi8oc")
+
+  const review1 = reviewTxtEl ? `<br/>${reviewTxtEl.textContent}` : ''
+  const review2 = reviewTxtEl2 ? `<br/>${reviewTxtEl2.textContent}` : ''
+  const review3 = reviewTxtEl3 ? `<br/>${reviewTxtEl3.textContent}` : ''
+
+  const review = cleanString(`${review1}${review2}${review3}`)
+
+  return {
+    name: cleanString(nameEl.textContent),
+    image: imageEl ? cleanString(imageEl.getAttribute("src")) : '',
+    rating: ratingEl ? cleanString(ratingEl.getAttribute("aria-label")) : '',
+    review
+  }
+})

@@ -28,6 +28,8 @@
 	import Slides from '$lib/components/slides/Slides.svelte';
 	import ImagePlaceholder from '$lib/components/skeletons/ImagePlaceholder.svelte';
 	import Coursecard from '$lib/components/cards/Coursecard.svelte';
+	import Carousel from '$lib/components/widgets/review-carousel/Carousel.svelte';
+	import { reviews } from '$lib';
 
 	let slides: iSlide[] = [];
 	let services: iService[] = [];
@@ -90,6 +92,14 @@
 		{:then sliders}
 			<Slides {sliders} />
 		{/await}
+	</div>
+</section>
+
+<!-- slides section -->
+<section aria-label="intro" class="row">
+	<div class="acenter">
+		<h2 class="text-xl font-semibold uppercase title text-center my-4">What our clients are saying?</h2>
+		<Carousel { reviews } />
 	</div>
 </section>
 
