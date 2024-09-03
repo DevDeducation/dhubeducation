@@ -98,7 +98,7 @@
 <!-- slides section -->
 <section aria-label="intro" class="row">
 	<div class="acenter">
-		<h2 class="text-xl font-semibold uppercase title text-center my-4">What our clients are saying?</h2>
+		<h2 class="text-xl font-semibold capitalize title text-center my-4">What our clients are saying on Google?</h2>
 		<Carousel { reviews } />
 	</div>
 </section>
