@@ -5,7 +5,7 @@ import type { Actions, PageServerLoad } from "./$types";
 export const load: PageServerLoad = async () => {
   let slider: iSlider | null = null
 
-  const sliderspaths = import.meta.glob('/src/content/homepagesliders/virtual-fair.md', { eager: true })
+  const sliderspaths = import.meta.glob('/src/content/homepagesliders/talk-show.md', { eager: true })
 
   slider = getMetadata(sliderspaths)[0] as iSlider
 

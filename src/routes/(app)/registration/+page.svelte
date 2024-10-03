@@ -11,9 +11,9 @@
 	$: heroload = data as unknown as iHeroLoad;
 	$: slider = heroload.slider;
 
-	$: title = 'Virtual Fair | DHUB Education';
-	$: description = getDescription('Study Abroad Virtual Fair');
-	$: ogimage = getOgImage('/uploads/slides/homepage/virtual-fair.webp');
+	$: title = 'Talk Show | DHUB Education';
+	$: description = getDescription('Study Abroad Talk Show');
+	$: ogimage = getOgImage('/uploads/talk-show.webp');
 </script>
 
 <svelte:head>
@@ -38,8 +38,9 @@
 		subline: [slider.subline],
 		backgroundImage: slider.background
 	}}
+	hideTitle={true}
 />
 
-<div class="acenter">
+<div class="acenter max-w-[768px] mx-auto">
 	<RegistrationForm />
 </div>
