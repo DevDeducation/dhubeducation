@@ -13,7 +13,7 @@
 
 	let popupBtnRef: HTMLButtonElement
 	
-	$: popupBtnRef && popupBtnRef.click()
+	// $: popupBtnRef && popupBtnRef.click()
 </script>
 
 <div class="bg-body dark:bg-dark-950 text-font dark:text-dark-100"> 

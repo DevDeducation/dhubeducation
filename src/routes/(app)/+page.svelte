@@ -36,9 +36,6 @@
 	import type { PageLoad } from './$types';
 
 	export let data: PageLoad;
-
-
-	console.log(data)
 	
 	// @ts-ignore
 	const sliders: iSlider[] = data.sliders as iSlider[]
