@@ -18,5 +18,12 @@ export const GET: RequestHandler = async () => {
   }).filter(popup => popup.active)
   .filter(popup => Date.now() >= +popup.startdate && Date.now() < +popup.enddate)
   
-  return json(popups);
+  // return json(popups);
+  return json({
+    active: true,
+    name: "Talk Show",
+    startdate: "October 10, 2024 12:00 PM",
+    enddate: "October 10, 2024 3:00 PM",
+    image: "https://www.dhubeducation.com/uploads/talk-show.webp"
+  })
 };
