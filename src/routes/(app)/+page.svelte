@@ -12,7 +12,10 @@
 		type iGlobalScale,
 		Constants,
 		getOgImage,
-		getDescription
+		getDescription,
+
+		type iSlider
+
 	} from '$lib';
 	import Button from '$lib/components/buttons/Button.svelte';
 	import YouTubeRed from '$lib/components/icons/YouTubeRed.svelte';
@@ -30,6 +33,16 @@
 	import Coursecard from '$lib/components/cards/Coursecard.svelte';
 	import Carousel from '$lib/components/widgets/review-carousel/Carousel.svelte';
 	import { reviews } from '$lib';
+	import type { PageLoad } from './$types';
+
+	export let data: PageLoad;
+
+
+	console.log(data)
+	
+	// @ts-ignore
+	const sliders: iSlider[] = data.sliders as iSlider[]
+
 
 	let slides: iSlide[] = [];
 	let services: iService[] = [];
@@ -84,14 +97,7 @@
 
 <section>
 	<div class="md:acenter">
-		{#await utils.getList(Constants.HOMEPAGESLIDERS)}
-			<div
-				class="w-full h-[300px] md:h-[400px] flex justify-center items-center bg-white/70 dark:bg-dark-700/70">
-				<ImagePlaceholder classes="w-32 h-32" />
-			</div>
-		{:then sliders}
-			<Slides {sliders} />
-		{/await}
+		<Slides {sliders} />
 	</div>
 </section>
 
