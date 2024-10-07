@@ -33,6 +33,7 @@
 	import Coursecard from '$lib/components/cards/Coursecard.svelte';
 	import Carousel from '$lib/components/widgets/review-carousel/Carousel.svelte';
 	import { reviews } from '$lib';
+	import RegistrationForm from '$lib/components/forms/RegistrationForm.svelte';
 	import type { PageLoad } from './$types';
 
 	export let data: PageLoad;
@@ -101,10 +102,22 @@
 <!-- slides section -->
 <section aria-label="intro" class="row">
 	<div class="acenter">
+		<h2 class="text-xl font-semibold capitalize title text-center my-4">Signup for our Talk Show</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div class="aspect-video rounded-lg" style={`background: url(https://www.dhubeducation.com/uploads/slides/homepage/ts.webp) no-repeat;background-size:cover;background-position:center`} />
+ 			<RegistrationForm />
+		</div>
+	</div>
+</section>
+
+<!-- slides section -->
+<section aria-label="intro" class="row">
+	<div class="acenter">
 		<h2 class="text-xl font-semibold capitalize title text-center my-4">What our clients are saying on Google?</h2>
 		<Carousel { reviews } />
 	</div>
 </section>
+
 
 <!-- global scale section -->
 <section class="bg-body-darker dark:dark:bg-dark-900">
