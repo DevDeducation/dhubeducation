@@ -88,7 +88,7 @@
 			title="Please enter a valid phone number"
 			placeholder="Phone Number (e.g 832 310 8276)"
 		/>
-		<select
+		<!-- <select
 			name="program"
 			id=""
 			class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:border-destructive [&>span]:line-clamp-1 data-[placeholder]:[&>span]:text-muted-foreground"
@@ -107,7 +107,7 @@
 			<option value="student">Student</option>
 			<option value="employed">Employed</option>
 			<option value="self-employed">Self Employed</option>
-		</select>
+		</select> -->
 	</div>
 	<Button type="submit" class="text-white">Register</Button>
 </form>
