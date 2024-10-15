@@ -40,7 +40,7 @@
 
 <!-- <Countdown /> -->
 <form
-	class="flex flex-col items-center gap-4 overflow-hidden rounded-lg shadow-custom"
+	class="flex flex-col items-center gap-4 overflow-hidden rounded-lg bg-white dark:bg-dark-950 p-4"
 	bind:this={formRef}
 	on:submit={handleSubmit}
 >
@@ -52,7 +52,7 @@
 			class="!hidden"
 			id="name"
 			required
-			value="Talk Show"
+			value="application"
 			placeholder="Name"
 		/>
 		<Input
