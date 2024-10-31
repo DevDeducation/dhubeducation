@@ -5,8 +5,7 @@
 	import { toast } from 'svelte-sonner';
 	import { Button } from '../ui/button';
 	import { Input } from '../ui/input';
-	import { Select } from '../ui/select';
-	import Countdown from '../widgets/Countdown.svelte';
+	import Select from './Select.svelte';	
 
 	let formRef: HTMLFormElement;
 
@@ -36,6 +35,12 @@
 
 		// handleClick(evt);
 	};
+
+	const list: { label: string, value: string }[] = [
+		{ label: "Foundation", value: "foundation" },
+		{ label: "£3,000 Scholarship", value: "£3,000 scholarship" },
+		{ label: "Research Masters", value: "research masters" }
+	]
 </script>
 
 <!-- <Countdown /> -->
@@ -44,7 +49,7 @@
 	bind:this={formRef}
 	on:submit={handleSubmit}
 >
-	<h1>Fill the form below to register</h1>
+	<h1>Fill the form below to indicate your interest</h1>
 	<div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
 		<input
 			type="text"
@@ -88,17 +93,17 @@
 			title="Please enter a valid phone number"
 			placeholder="Phone Number (e.g 832 310 8276)"
 		/>
-		<!-- <select
+		<select
 			name="program"
 			id=""
 			class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:border-destructive [&>span]:line-clamp-1 data-[placeholder]:[&>span]:text-muted-foreground"
 		>
-			<option value="" selected>Program interest...</option>
+			<option value="" selected>Program of interest...</option>
 			<option value="foundation">Foundation</option>
-			<option value="bachelors">Bachelor's</option>
-			<option value="masters">Master's</option>
+			<option value="£3,000 scholarship">£3,000 Scholarship</option>
+			<option value="research masters">Research Masters</option>
 		</select>
-		<select
+		<!-- <select
 			name="occupation"
 			id=""
 			class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:border-destructive [&>span]:line-clamp-1 data-[placeholder]:[&>span]:text-muted-foreground"
