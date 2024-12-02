@@ -19,7 +19,7 @@
 		className = isSelected ? `${className} live` : className;
 	}
 
-	const text = $page.data.userSession ? 'dashboard' : 'sign in'
+	const text = $page.data.userSession ? 'dashboard' : 'sign in / register'
 </script>
 
 {#if !small}
